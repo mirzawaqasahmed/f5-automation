@@ -1,0 +1,12 @@
+---
+- name: test
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: test ansible node
+      shell: "ansible-doc bigip_pool_member"
+      register: output
+
+    - debug: var=output

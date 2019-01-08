@@ -1,0 +1,10 @@
+---
+- name: Device Provisioning
+  hosts: lab
+  gather_facts: false
+  connection: local
+
+  roles:
+    - onboarding
+    - deploy
+    - getters

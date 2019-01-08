@@ -1,0 +1,5 @@
+adc01.lab.local:
+  - pool: /Common/test_pool
+    state: ACTIVE_UNKNOWN
+  - pool: /Common/test_pool-2
+    state: ACTIVE_UNKNOWN

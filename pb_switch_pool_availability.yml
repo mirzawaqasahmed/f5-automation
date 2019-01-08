@@ -1,0 +1,196 @@
+# This playbook can be used to enable, disable, force offline, add or remove a pool member.
+# Run it using following and change the variables accordingly.
+# ansible-playbook -i inventory pb_switch_pool_availability.yml \
+# -e pool_name=test_pool-2 -e member_ip=10.10.10.11 \
+# -e member_port=80 -e member_name=node-11 \
+# -e target_host=adc01.lab.local \
+# -e member_state=present
+# 
+---
+- name: Get Target host for pool
+  hosts: lab
+  gather_facts: false
+  connection: local
+
+  vars_prompt:
+    - name: target_host
+      prompt: please enter the target host IP
+      private: no
+
+  tasks:
+    - name: add the target host dynamically into inventory
+      add_host:
+        name: "{{ target_host }}"
+        groups: dynamically_created_hosts
+
+    - name: gather facts of pools
+      bigip_device_facts:
+        gather_subset:
+            - ltm-pools
+        validate_certs: False
+        provider: "{{ f5_cred }}"
+      delegate_to: localhost
+      when: inventory_hostname in groups['ltm']
+      register: ltm_facts
+
+    - debug: var=hostvars[inventory_hostname]['ltm_facts']
+      when: debug is defined
+
+    - name: create list of pools and their members state
+      set_fact:
+        pool_list: |
+          {% set pools_ = [] %}
+          {% set pool_configs = dict() %}
+          {% for pool in hostvars[inventory_hostname]['ltm_facts']['ltm_pools'] %}
+          {% set _ = pool_configs.update({pool["name"]: pool}) %}
+          {% endfor %}
+          {% for pool in hostvars[inventory_hostname]['ltm_facts']['ltm_pools'] %}
+          {% set pool_config = pool_configs[pool.name] %}
+          {% set _ = pools_.append({"pool":pool.name, "members": pool_config['members']}) %}
+          {% endfor %}
+          {{ pools_ }}
+        cacheable: no
+
+    - debug: var=hostvars[inventory_hostname]['ltm_facts']['ltm_pools']
+      when: debug is defined
+
+    - debug: var=pool_list
+      # when: debug is defined
+
+    - name: ensure stats directory exists
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - stats
+
+    - name: ensure destination file exists
+      file:
+        path: ./stats/pools_status.yml
+        state: touch
+
+    - name: create a list of pools
+      template:
+        dest: ./stats/pools_status.yml
+        src: pools_status.j2
+        trim_blocks: yes
+        lstrip_blocks: yes
+
+- name: Perform Pre-Task
+  hosts: dynamically_created_hosts
+
+  vars_prompt:
+    - name: "pool_name"
+      prompt: "Enter the pool name"
+      private: no
+    - name: "member_name"
+      prompt: "Enter the pool member name"
+      private: no
+    - name: "member_port"
+      prompt: "Enter the pool member port"
+      private: no
+    - name: "member_state"
+      prompt: "Which state do you want to move the above pool. (Enter present, absent, enabled, disabled or forced_offline)"
+      private: no
+    - name: "member_ip"
+      prompt: "What is the IP of the node"
+      private: no
+      when: member_state == "present"
+
+  tasks:
+
+    - name: switch state of the pool member
+      bigip_pool_member:
+        provider: "{{ f5_cred }}"
+        pool: "{{ pool_name }}"
+        host: "{{ member_name }}"
+        port: "{{ member_port }}"
+        state: "{{ member_state }}"
+        validate_certs: False
+      delegate_to: localhost
+      when: member_state == "absent" or member_state == "enabled" or member_state == "disabled" or member_state == "forced_offline"
+
+    - name: add node when it does not exist
+      bigip_node:
+        provider: "{{ f5_cred }}"
+        host: "{{ member_ip }}"
+        name: "{{ member_name }}"
+        state: "{{ member_state }}"
+        validate_certs: false
+      delegate_to: localhost
+      when: member_state == "present"
+
+    - name: add newly created node into the pool
+      bigip_pool_member:
+        provider: "{{ f5_cred }}"
+        pool: "{{ pool_name }}"
+        host: "{{ member_ip }}"
+        port: "{{ member_port }}"
+        name: "{{ member_name }}"
+        state: "{{ member_state }}"
+        validate_certs: False
+      delegate_to: localhost
+      when: member_state == "present"
+
+    # - wait_for:
+    #     timeout=30
+
+    - name: collect new state of all pools
+      bigip_device_facts:
+        gather_subset:
+            - ltm-pools
+        validate_certs: False
+        provider: "{{ f5_cred }}"
+      delegate_to: localhost
+      when: inventory_hostname in groups['ltm']
+      register: post_ltm_facts
+
+    - name: create new list of pools and their members state
+      set_fact:
+        new_pool_list: |
+          {% set pools_ = [] %}
+          {% set pool_configs = dict() %}
+          {% for pool in hostvars[inventory_hostname]['post_ltm_facts']['ltm_pools'] %}
+          {% set _ = pool_configs.update({pool["name"]: pool}) %}
+          {% endfor %}
+          {% for pool in hostvars[inventory_hostname]['post_ltm_facts']['ltm_pools'] %}
+          {% set pool_config = pool_configs[pool.name] %}
+          {% set _ = pools_.append({"pool":pool.name, "members": pool_config['members']}) %}
+          {% endfor %}
+          {{ pools_ }}
+        cacheable: no
+
+    - name: create new list of pools and their members state
+      set_fact:
+        new_member_state: |
+          {% set actual_member_state = {"status": "Default"} %}
+          {% for p in new_pool_list %}
+          {% if p['pool'] == pool_name %}
+          {% for m in p['members'] %}
+          {% if m['name'] == member_name ~ ':' ~ member_port %}
+          {% set _ = actual_member_state.update({"status":m['state']}) %}
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {% endfor %}
+          {{ actual_member_state.status }}
+        cacheable: no
+
+    - name: debug desired member state
+      debug: var=member_state
+
+    - name: debug new member state
+      debug: var=new_member_state
+
+    - set_fact:
+        new_member_state: "enabled"
+      when: member_state == "enabled" and new_member_state == "present\n"
+
+    - set_fact:
+        new_member_state: "absent"
+      when: member_state == "absent" and new_member_state == "Default\n"
+
+    - debug: var=new_member_state
+
+    - assert:
+        that: new_member_state | replace('\n', '') == member_state

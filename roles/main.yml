@@ -1,0 +1,104 @@
+---
+  # - name: Generate http-redirect-https iRule
+  #   template:
+  #     src: http-redirect-https.j2
+  #     dest: "{{ role_path }}/files/http-redirect-https.tcl"
+
+  # - name: Upload irules
+  #   bigip_irule:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     src: "{{ item }}"
+  #     module: ltm
+  #     name: "{{ item | basename }}"
+  #     state: present
+  #     validate_certs: no
+  #   with_fileglob: 
+  #     - "{{ role_path }}/files/*.tcl"
+  #   delegate_to: localhost
+
+  # - name: Creating nodes
+  #   bigip_node:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     host: "{{item.1.host}}"
+  #     name: "{{item.1.name}}"
+  #     validate_certs: no
+  #     state: "{{ item.1.state }}"
+  #   with_subelements:
+  #     - "{{ vips }}"
+  #     - pool.nodes
+  #   delegate_to: localhost
+  #   loop_control:
+  #     label: "{{ item.1.name }} {{ item.1.host }}"
+
+  # - name: Create pool
+  #   bigip_pool:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     name: "{{ item.pool.name }}"
+  #     validate_certs: no
+  #     state: "{{ item.pool.state }}"
+  #   with_items:
+  #     - "{{ vips }}"
+  #   delegate_to: localhost
+  #   loop_control:
+  #     label: "{{ item.pool.name }}"
+
+  # - name: Add Full_Tunnel_RA_NetOps_vs1 Pool members
+  #   bigip_pool_member:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     name: "{{ item.1.name }}"
+  #     host: "{{ item.1.host }}"
+  #     port: "{{ item.1.port }}"
+  #     pool: "{{ item.0.pool.name }}"
+  #     validate_certs: no
+  #   with_subelements:
+  #     - "{{ vips }}"
+  #     - pool.nodes
+  #   delegate_to: localhost
+  #   loop_control:
+  #     label: "{{ item.0.pool.name }} -> {{ item.1.name }} -> {{ item.1.host }} -> {{ item.1.port }}"
+
+  # - name: Add Virtual Servers
+  #   bigip_virtual_server:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     name: "{{ item.name }}"
+  #     description: "{{ item.description }}"
+  #     destination: "{{ item.destination }}"
+  #     port: "{{ item.port }}"
+  #     pool: "{{ item.pool.name }}"
+  #     snat: "Automap"
+  #     profiles: "{{ item.profiles }}"
+  #     irules: "{{ item.irules }}"
+  #     enabled_vlans: "{{ item.vlan }}"
+  #     state: "{{ item.state }}"
+  #     validate_certs: no
+  #   with_items:
+  #     - "{{ vips }}"
+  #   delegate_to: localhost
+
+  # - name: Save the running configuration of the BIG-IP
+  #   bigip_config:
+  #     save: yes
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     validate_certs: no
+  #   delegate_to: localhost
+  
+  # - name: Create ucs file and store it
+  #   bigip_ucs:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     ucs: "/var/local/ucs/{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}.ucs"
+  #     state: "installed"
+  #   delegate_to: localhost

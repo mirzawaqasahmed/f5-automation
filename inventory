@@ -1,0 +1,8 @@
+[lab]
+adc01.lab.local ansible_host=192.168.40.129 ansible_network_os=bigip ansible_user=admin ansible_ssh_pass=admin
+
+[ltm:children]
+lab
+
+[gtm:children]
+lab

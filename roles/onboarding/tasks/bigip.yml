@@ -1,0 +1,148 @@
+---
+  # - name: License BIG-IP
+  #   bigip_device_license:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ password }}"
+  #     validate_certs: False
+  #     license_key: "{{ license_key }}"
+  #     accept_eula: yes
+  #     # provider: "{{ f5_cred }}"
+  #   delegate_to: localhost
+
+  - name: Configure BIG-IP hostname
+    bigip_hostname:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ password }}"
+      hostname: "{{ hostname }}"
+      validate_certs: False
+    tags: hostname
+    delegate_to: localhost
+
+  - name: Configure NTP server on BIG-IP
+    bigip_device_ntp:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ password }}"
+      ntp_servers: "{{ ntp_servers }}"
+      validate_certs: False
+    tags: ntp
+    delegate_to: localhost
+
+  - name: Manage SSHD setting on BIG-IP
+    bigip_device_sshd:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      banner: "enabled"
+      banner_text: " {{ banner_text }}"
+      validate_certs: False
+    tags: ssh
+    delegate_to: localhost
+
+  - name: Manage BIG-IP DNS settings
+    bigip_device_dns:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name_servers: "{{ dns_servers }}"
+      search: "{{ dns_search_domains }}"
+      # forwarders: "{{ bind_servers }}"
+      ip_version: "{{ ip_version }}"
+      validate_certs: False
+    tags: dns
+    delegate_to: localhost
+
+  - name: Provision BIG-IP with appropriate modules
+    bigip_provision:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      module: "{{ item.name }}"
+      level: "{{ item.level }}"
+      validate_certs: False
+    with_items: "{{ module_provisioning }}"
+    tags: provision
+    delegate_to: localhost
+
+  - name: Configure taged interfaces on the BIG-IP
+    bigip_vlan:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.name }}"
+      tag: "{{ item.tag | default(omit) }}"
+      tagged_interface: "{{ item.interface | default(omit) }}"
+      untagged_interfaces: "{{ item.interface }}"
+      validate_certs: False
+    with_items: "{{ tagged_vlan }}"
+    tags: vlan
+    delegate_to: localhost
+    when: tagged_vlan is defined
+
+  - name: Configure untaged interfaces on the BIG-IP
+    bigip_vlan:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.name }}"
+      untagged_interfaces: "{{ item.interface }}"
+      validate_certs: False
+    with_items: "{{ untagged_vlan }}"
+    tags: vlan
+    delegate_to: localhost
+    when: untagged_vlan is defined
+
+  - name: Configure SELF-IPs on the BIG-IP
+    bigip_selfip:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.name }}"
+      address: "{{ item.address }}"
+      netmask: "{{ item.netmask }}"
+      vlan: "{{ item.vlan }}"
+      allow_service: "{{item.allow_service}}"
+      validate_certs: False
+    with_items: "{{ selfip_information }}"
+    tags: selfip
+    delegate_to: localhost
+    
+  - name: Create static route with gateway address
+    # this is for future use.
+    bigip_static_route:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      destination: "{{ item.network }}"
+      netmask: "{{ item.mask }}"
+      gateway_address: "{{ item.gw }}"
+      name: "{{ item.name }}"
+      description: "{{ item.description }}"
+      validate_certs: False
+    # uri:
+    #   url: "https://{{ ansible_host }}/mgmt/tm/net/route"
+    #   server: "{{ inventory_hostname }}"
+    #   user: "{{ ansible_user }}"
+    #   password: "{{ ansible_ssh_pass }}"
+    #   method: "POST"
+    #   body: "{{ item }}"
+    #   return_content: "True"
+    #   body_format: "json"
+    #   validate_certs: no
+    # ignore_errors: True
+    with_items: "{{ routes }}"
+    tags: routes
+    delegate_to: localhost
+
+  # - name: Create static route in management domain
+  #   bigip_command:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     commands:
+  #     - "tmsh create /sys management-route {{ item.name }} network {{ item.network }}/{{ item.mask }} gateway {{ item.gw }}"
+  #     validate_certs: "no"
+  #   delegate_to: localhost
+  #   with_items: "{{ mgmt_routes }}"

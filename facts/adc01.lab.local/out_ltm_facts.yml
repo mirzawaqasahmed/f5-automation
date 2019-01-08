@@ -1,0 +1,2670 @@
+address_class:
+  /Common/aol:
+    address_class: {address: 172.16.0.0, netmask: 255.240.0.0, value: ''}
+    description: ''
+  /Common/private_net:
+    address_class: {address: 10.0.0.0, netmask: 255.0.0.0, value: ''}
+    description: ''
+certificate:
+  /Common/ca-bundle:
+    certificate:
+      bit_length: 2048
+      cert_info: {email: null, id: /Common/ca-bundle}
+      cert_type: CTYPE_CA_SIGNED_YES
+      expiration_date: 1893455999
+      expiration_string: Dec 31 23:59:59 2029 GMT
+      issuer: {common_name: Starfield Services Root Certificate Authority, country_name: US,
+        division_name: 'http://certificates.starfieldtech.com/repository/', locality_name: Scottsdale,
+        organization_name: 'Starfield Technologies, Inc.', state_name: Arizona}
+      key_type: KTYPE_RSA_PUBLIC
+      serial_number: null
+      subject: {common_name: Starfield Services Root Certificate Authority, country_name: US,
+        division_name: 'http://certificates.starfieldtech.com/repository/', locality_name: Scottsdale,
+        organization_name: 'Starfield Technologies, Inc.', state_name: Arizona}
+      version: 3
+    file_name: /Common/ca-bundle.crt
+    is_bundled: 1
+  /Common/default:
+    certificate:
+      bit_length: 2048
+      cert_info: {email: root@localhost.localdomain, id: /Common/default}
+      cert_type: CTYPE_CA_SIGNED_UNKNOWN
+      expiration_date: 1840918078
+      expiration_string: May  2 22:07:58 2028 GMT
+      issuer: {common_name: localhost.localdomain, country_name: US, division_name: IT,
+        locality_name: Seattle, organization_name: MyCompany, state_name: WA}
+      key_type: KTYPE_RSA_PUBLIC
+      serial_number: '263225278'
+      subject: {common_name: localhost.localdomain, country_name: US, division_name: IT,
+        locality_name: Seattle, organization_name: MyCompany, state_name: WA}
+      version: 3
+    file_name: /Common/default.crt
+    is_bundled: 0
+  /Common/f5-irule:
+    certificate:
+      bit_length: 2048
+      cert_info: {email: support@f5.com, id: /Common/f5-irule}
+      cert_type: CTYPE_CA_SIGNED_UNKNOWN
+      expiration_date: 1944422489
+      expiration_string: Aug 13 21:21:29 2031 GMT
+      issuer: {common_name: support.f5.com, country_name: US, division_name: Product
+          Development, locality_name: Seattle, organization_name: F5 Networks, state_name: Washington}
+      key_type: KTYPE_RSA_PUBLIC
+      serial_number: c3:4c:63:f7:7f:d3:ae:e5
+      subject: {common_name: support.f5.com, country_name: US, division_name: Product
+          Development, locality_name: Seattle, organization_name: F5 Networks, state_name: Washington}
+      version: 1
+    file_name: /Common/f5-irule.crt
+    is_bundled: 0
+client_ssl_profile:
+  /Common/clientssl:
+    alert_timeout: {default_flag: 0, value: -1}
+    allow_nonssl_state: {default_flag: 1, value: STATE_DISABLED}
+    authenticate_depth: {default_flag: 0, value: 9}
+    authenticate_once_state: {default_flag: 0, value: STATE_ENABLED}
+    ca_file: {default_flag: 0, value: null}
+    cache_size: {default_flag: 0, value: 262144}
+    cache_timeout: {default_flag: 0, value: 3600}
+    certificate_file: {default_flag: 1, value: /Common/default.crt}
+    chain_file: {default_flag: 1, value: null}
+    cipher_list:
+      default_flag: 0
+      values: [DEFAULT]
+    client_certificate_ca_file: {default_flag: 0, value: null}
+    crl_file: {default_flag: 0, value: null}
+    default_profile: ''
+    description: ''
+    forward_proxy_ca_certificate_file: {default_flag: 1, value: null}
+    forward_proxy_ca_key_file: {default_flag: 1, value: null}
+    forward_proxy_ca_passphrase: {default_flag: 1, value: null}
+    forward_proxy_certificate_extension_include:
+      default_flag: 0
+      value: [SSL_FWDP_CERT_EXT_BASIC_CONSTRAINTS, SSL_FWDP_CERT_EXT_SUBJECT_ALTERNATIVE_NAME]
+    forward_proxy_certificate_lifespan: {default_flag: 1, value: 30}
+    forward_proxy_enabled_state: {default_flag: 1, value: STATE_DISABLED}
+    forward_proxy_lookup_by_ipaddr_port_state: {default_flag: 1, value: STATE_DISABLED}
+    handshake_timeout: {default_flag: 0, value: 10}
+    is_base_profile: 1
+    is_system_profile: 1
+    key_file: {default_flag: 1, value: /Common/default.key}
+    modssl_emulation_state: {default_flag: 0, value: STATE_DISABLED}
+    passphrase: {default_flag: 1, value: null}
+    peer_certification_mode: {default_flag: 0, value: CLIENTSSL_CERTIFICATE_MODE_IGNORE}
+    profile_mode: {default_flag: 0, value: PROFILE_MODE_ENABLED}
+    renegotiation_maximum_record_delay: {default_flag: 0, value: -1}
+    renegotiation_period: {default_flag: 0, value: -1}
+    renegotiation_state: {default_flag: 0, value: STATE_ENABLED}
+    renegotiation_throughput: {default_flag: 0, value: -1}
+    retain_certificate_state: {default_flag: 1, value: STATE_ENABLED}
+    secure_renegotiation_mode: {default_flag: 0, value: SECURE_RENEGOTIATION_MODE_REQUIRE}
+    server_name: {default_flag: 1, value: null}
+    session_ticket_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_default_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_require_state: {default_flag: 1, value: STATE_DISABLED}
+    ssl_option:
+      default_flag: 0
+      values: [SSL_OPTION_DONT_INSERT_EMPTY_FRAGMENTS]
+    strict_resume_state: {default_flag: 0, value: STATE_DISABLED}
+    unclean_shutdown_state: {default_flag: 0, value: STATE_ENABLED}
+  /Common/clientssl-insecure-compatible:
+    alert_timeout: {default_flag: 1, value: -1}
+    allow_nonssl_state: {default_flag: 1, value: STATE_DISABLED}
+    authenticate_depth: {default_flag: 1, value: 9}
+    authenticate_once_state: {default_flag: 1, value: STATE_ENABLED}
+    ca_file: {default_flag: 1, value: null}
+    cache_size: {default_flag: 1, value: 262144}
+    cache_timeout: {default_flag: 1, value: 3600}
+    certificate_file: {default_flag: 1, value: /Common/default.crt}
+    chain_file: {default_flag: 1, value: null}
+    cipher_list:
+      default_flag: 0
+      values: ['!SSLv2', ALL, '!DH', '!ADH', '!EDH', '@SPEED']
+    client_certificate_ca_file: {default_flag: 1, value: null}
+    crl_file: {default_flag: 1, value: null}
+    default_profile: /Common/clientssl
+    description: ''
+    forward_proxy_ca_certificate_file: {default_flag: 1, value: null}
+    forward_proxy_ca_key_file: {default_flag: 1, value: null}
+    forward_proxy_ca_passphrase: {default_flag: 1, value: null}
+    forward_proxy_certificate_extension_include:
+      default_flag: 1
+      value: [SSL_FWDP_CERT_EXT_BASIC_CONSTRAINTS, SSL_FWDP_CERT_EXT_SUBJECT_ALTERNATIVE_NAME]
+    forward_proxy_certificate_lifespan: {default_flag: 1, value: 30}
+    forward_proxy_enabled_state: {default_flag: 1, value: STATE_DISABLED}
+    forward_proxy_lookup_by_ipaddr_port_state: {default_flag: 1, value: STATE_DISABLED}
+    handshake_timeout: {default_flag: 1, value: 10}
+    is_base_profile: 0
+    is_system_profile: 1
+    key_file: {default_flag: 1, value: /Common/default.key}
+    modssl_emulation_state: {default_flag: 1, value: STATE_DISABLED}
+    passphrase: {default_flag: 1, value: null}
+    peer_certification_mode: {default_flag: 1, value: CLIENTSSL_CERTIFICATE_MODE_IGNORE}
+    profile_mode: {default_flag: 1, value: PROFILE_MODE_ENABLED}
+    renegotiation_maximum_record_delay: {default_flag: 1, value: -1}
+    renegotiation_period: {default_flag: 1, value: -1}
+    renegotiation_state: {default_flag: 0, value: STATE_ENABLED}
+    renegotiation_throughput: {default_flag: 1, value: -1}
+    retain_certificate_state: {default_flag: 1, value: STATE_ENABLED}
+    secure_renegotiation_mode: {default_flag: 0, value: SECURE_RENEGOTIATION_MODE_REQUEST}
+    server_name: {default_flag: 1, value: null}
+    session_ticket_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_default_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_require_state: {default_flag: 1, value: STATE_DISABLED}
+    ssl_option:
+      default_flag: 1
+      values: [SSL_OPTION_DONT_INSERT_EMPTY_FRAGMENTS]
+    strict_resume_state: {default_flag: 1, value: STATE_DISABLED}
+    unclean_shutdown_state: {default_flag: 1, value: STATE_ENABLED}
+  /Common/clientssl-secure:
+    alert_timeout: {default_flag: 1, value: -1}
+    allow_nonssl_state: {default_flag: 1, value: STATE_DISABLED}
+    authenticate_depth: {default_flag: 1, value: 9}
+    authenticate_once_state: {default_flag: 1, value: STATE_ENABLED}
+    ca_file: {default_flag: 1, value: null}
+    cache_size: {default_flag: 1, value: 262144}
+    cache_timeout: {default_flag: 1, value: 3600}
+    certificate_file: {default_flag: 1, value: /Common/default.crt}
+    chain_file: {default_flag: 1, value: null}
+    cipher_list:
+      default_flag: 0
+      values: [ecdhe, rsa, '!sslv3', '!rc4', '!exp', '!des']
+    client_certificate_ca_file: {default_flag: 1, value: null}
+    crl_file: {default_flag: 1, value: null}
+    default_profile: /Common/clientssl
+    description: ''
+    forward_proxy_ca_certificate_file: {default_flag: 1, value: null}
+    forward_proxy_ca_key_file: {default_flag: 1, value: null}
+    forward_proxy_ca_passphrase: {default_flag: 1, value: null}
+    forward_proxy_certificate_extension_include:
+      default_flag: 1
+      value: [SSL_FWDP_CERT_EXT_BASIC_CONSTRAINTS, SSL_FWDP_CERT_EXT_SUBJECT_ALTERNATIVE_NAME]
+    forward_proxy_certificate_lifespan: {default_flag: 1, value: 30}
+    forward_proxy_enabled_state: {default_flag: 1, value: STATE_DISABLED}
+    forward_proxy_lookup_by_ipaddr_port_state: {default_flag: 1, value: STATE_DISABLED}
+    handshake_timeout: {default_flag: 1, value: 10}
+    is_base_profile: 0
+    is_system_profile: 1
+    key_file: {default_flag: 1, value: /Common/default.key}
+    modssl_emulation_state: {default_flag: 1, value: STATE_DISABLED}
+    passphrase: {default_flag: 1, value: null}
+    peer_certification_mode: {default_flag: 1, value: CLIENTSSL_CERTIFICATE_MODE_IGNORE}
+    profile_mode: {default_flag: 1, value: PROFILE_MODE_ENABLED}
+    renegotiation_maximum_record_delay: {default_flag: 1, value: -1}
+    renegotiation_period: {default_flag: 1, value: -1}
+    renegotiation_state: {default_flag: 0, value: STATE_DISABLED}
+    renegotiation_throughput: {default_flag: 1, value: -1}
+    retain_certificate_state: {default_flag: 1, value: STATE_ENABLED}
+    secure_renegotiation_mode: {default_flag: 1, value: SECURE_RENEGOTIATION_MODE_REQUIRE}
+    server_name: {default_flag: 1, value: null}
+    session_ticket_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_default_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_require_state: {default_flag: 1, value: STATE_DISABLED}
+    ssl_option:
+      default_flag: 0
+      values: [SSL_OPTION_NO_SSL]
+    strict_resume_state: {default_flag: 1, value: STATE_DISABLED}
+    unclean_shutdown_state: {default_flag: 1, value: STATE_ENABLED}
+  /Common/crypto-server-default-clientssl:
+    alert_timeout: {default_flag: 1, value: -1}
+    allow_nonssl_state: {default_flag: 1, value: STATE_DISABLED}
+    authenticate_depth: {default_flag: 1, value: 9}
+    authenticate_once_state: {default_flag: 1, value: STATE_ENABLED}
+    ca_file: {default_flag: 1, value: null}
+    cache_size: {default_flag: 0, value: 0}
+    cache_timeout: {default_flag: 1, value: 3600}
+    certificate_file: {default_flag: 1, value: /Common/default.crt}
+    chain_file: {default_flag: 1, value: null}
+    cipher_list:
+      default_flag: 0
+      values: [DHE-RSA-AES256-GCM-SHA384]
+    client_certificate_ca_file: {default_flag: 1, value: null}
+    crl_file: {default_flag: 1, value: null}
+    default_profile: /Common/clientssl
+    description: ''
+    forward_proxy_ca_certificate_file: {default_flag: 1, value: null}
+    forward_proxy_ca_key_file: {default_flag: 1, value: null}
+    forward_proxy_ca_passphrase: {default_flag: 1, value: null}
+    forward_proxy_certificate_extension_include:
+      default_flag: 1
+      value: [SSL_FWDP_CERT_EXT_BASIC_CONSTRAINTS, SSL_FWDP_CERT_EXT_SUBJECT_ALTERNATIVE_NAME]
+    forward_proxy_certificate_lifespan: {default_flag: 1, value: 30}
+    forward_proxy_enabled_state: {default_flag: 1, value: STATE_DISABLED}
+    forward_proxy_lookup_by_ipaddr_port_state: {default_flag: 1, value: STATE_DISABLED}
+    handshake_timeout: {default_flag: 1, value: 10}
+    is_base_profile: 0
+    is_system_profile: 1
+    key_file: {default_flag: 1, value: /Common/default.key}
+    modssl_emulation_state: {default_flag: 1, value: STATE_DISABLED}
+    passphrase: {default_flag: 1, value: null}
+    peer_certification_mode: {default_flag: 1, value: CLIENTSSL_CERTIFICATE_MODE_IGNORE}
+    profile_mode: {default_flag: 1, value: PROFILE_MODE_ENABLED}
+    renegotiation_maximum_record_delay: {default_flag: 1, value: -1}
+    renegotiation_period: {default_flag: 0, value: 21600}
+    renegotiation_state: {default_flag: 1, value: STATE_ENABLED}
+    renegotiation_throughput: {default_flag: 1, value: -1}
+    retain_certificate_state: {default_flag: 1, value: STATE_ENABLED}
+    secure_renegotiation_mode: {default_flag: 1, value: SECURE_RENEGOTIATION_MODE_REQUIRE}
+    server_name: {default_flag: 1, value: null}
+    session_ticket_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_default_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_require_state: {default_flag: 1, value: STATE_DISABLED}
+    ssl_option:
+      default_flag: 1
+      values: [SSL_OPTION_DONT_INSERT_EMPTY_FRAGMENTS]
+    strict_resume_state: {default_flag: 1, value: STATE_DISABLED}
+    unclean_shutdown_state: {default_flag: 1, value: STATE_ENABLED}
+  /Common/wom-default-clientssl:
+    alert_timeout: {default_flag: 1, value: -1}
+    allow_nonssl_state: {default_flag: 0, value: STATE_ENABLED}
+    authenticate_depth: {default_flag: 1, value: 9}
+    authenticate_once_state: {default_flag: 1, value: STATE_ENABLED}
+    ca_file: {default_flag: 1, value: null}
+    cache_size: {default_flag: 1, value: 262144}
+    cache_timeout: {default_flag: 1, value: 3600}
+    certificate_file: {default_flag: 1, value: /Common/default.crt}
+    chain_file: {default_flag: 1, value: null}
+    cipher_list:
+      default_flag: 1
+      values: [DEFAULT]
+    client_certificate_ca_file: {default_flag: 1, value: null}
+    crl_file: {default_flag: 1, value: null}
+    default_profile: /Common/clientssl
+    description: ''
+    forward_proxy_ca_certificate_file: {default_flag: 1, value: null}
+    forward_proxy_ca_key_file: {default_flag: 1, value: null}
+    forward_proxy_ca_passphrase: {default_flag: 1, value: null}
+    forward_proxy_certificate_extension_include:
+      default_flag: 1
+      value: [SSL_FWDP_CERT_EXT_BASIC_CONSTRAINTS, SSL_FWDP_CERT_EXT_SUBJECT_ALTERNATIVE_NAME]
+    forward_proxy_certificate_lifespan: {default_flag: 1, value: 30}
+    forward_proxy_enabled_state: {default_flag: 1, value: STATE_DISABLED}
+    forward_proxy_lookup_by_ipaddr_port_state: {default_flag: 1, value: STATE_DISABLED}
+    handshake_timeout: {default_flag: 1, value: 10}
+    is_base_profile: 0
+    is_system_profile: 1
+    key_file: {default_flag: 1, value: /Common/default.key}
+    modssl_emulation_state: {default_flag: 1, value: STATE_DISABLED}
+    passphrase: {default_flag: 1, value: null}
+    peer_certification_mode: {default_flag: 1, value: CLIENTSSL_CERTIFICATE_MODE_IGNORE}
+    profile_mode: {default_flag: 1, value: PROFILE_MODE_ENABLED}
+    renegotiation_maximum_record_delay: {default_flag: 1, value: -1}
+    renegotiation_period: {default_flag: 1, value: -1}
+    renegotiation_state: {default_flag: 1, value: STATE_ENABLED}
+    renegotiation_throughput: {default_flag: 1, value: -1}
+    retain_certificate_state: {default_flag: 1, value: STATE_ENABLED}
+    secure_renegotiation_mode: {default_flag: 1, value: SECURE_RENEGOTIATION_MODE_REQUIRE}
+    server_name: {default_flag: 1, value: null}
+    session_ticket_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_default_state: {default_flag: 1, value: STATE_DISABLED}
+    sni_require_state: {default_flag: 1, value: STATE_DISABLED}
+    ssl_option:
+      default_flag: 1
+      values: [SSL_OPTION_DONT_INSERT_EMPTY_FRAGMENTS]
+    strict_resume_state: {default_flag: 1, value: STATE_DISABLED}
+    unclean_shutdown_state: {default_flag: 1, value: STATE_ENABLED}
+device:
+  /Common/adc01.lab.local:
+    active_modules: ['BIG-IP, VE, LAB|CLFEKMY-WJHKTGJ|Rate Shaping|External Interface
+        and Network HSM, VE|SDN Services, VE|SSL, Forward Proxy, VE|DNS Services (LAB)|BIG-IP
+        VE, Multicast Routing|APM, Limited|SSL, VE|Routing Bundle, VE|PSM, VE|AFM,
+        VE (LAB ONLY - NO ROUTING)|ASM, VE|Crytpo Offload, VE, Tier 1 (25M - 200M)|Acceleration
+        Manager, VE|Max Compression, VE|Advanced Protocols, VE|Anti-Virus Checks|Base
+        Endpoint Security Checks|Firewall Checks|Network Access|Secure Virtual Keyboard|APM,
+        Web Application|Machine Certificate Checks|Protected Workspace|Remote Desktop|App
+        Tunnel|VE, Carrier Grade NAT (AFM ONLY)|DNS Rate Fallback, Unlimited|DNS Licensed
+        Objects, Unlimited|DNS Rate Limit, Unlimited QPS', 'CGN, VE (LAB)|GXJTJRO-CCVOTLW|Routing
+        Bundle, VE', DNSSEC|LTCGXMQ-RSQOSLW, 'GTM, VE (LAB)|PYBRKYU-PEFVTEO|IPV6 Gateway|STP|DNS
+        Express|Ram Cache']
+    base_mac_address: 00:0C:29:B9:18:2C
+    blade_addresses: []
+    build: 0.0.2
+    chassis_id: 564d227c-2116-dfe5-9436f7b9182c
+    chassis_type: CHASSIS_VERSION_INDIVIDUAL
+    comment: ''
+    configsync_address: 0:0:0:0:0:0:0:0
+    contact: ''
+    description: ''
+    edition: Point Release 4
+    failover_state: HA_STATE_ACTIVE
+    hostname: adc01.lab.local
+    inactive_modules: []
+    location: ''
+    management_address: 192.168.40.129
+    marketing_name: BIG-IP Virtual Edition
+    multicast_address:
+      address: {address: '0:0:0:0:0:0:0:0', port: 0}
+      interface_name: null
+    optional_modules: ['APC-VE, Introductory', 'APC-VE, Introductory to Medium Upgrade',
+      'APC-VE, Medium', 'App Mode (TMSH Only, No Root/Bash)', 'IP Intelligence, 1Yr,
+        VE', 'IP Intelligence, 1Yr, VE-200M/VE-25M', 'IP Intelligence, 3Yr, VE', 'IP
+        Intelligence, 3Yr, VE-200M/VE-25M', 'PEM URL Filtering, 1Yr, 200Mbps', 'PEM
+        URL Filtering, 1Yr, VE-10M LAB, 200M', 'PEM URL Filtering, 3Yr, 200Mbps',
+      'PEM URL Filtering, 3Yr, VE-10M LAB, 200M', 'PEM, Quota Management, VE', 'PEM,
+        VE', 'URL Filtering, 1Yr, VE', 'URL Filtering, 3Yr, VE', 'URL Filtering, VE-25M-1G,
+        500 Sessions, 1Yr', 'URL Filtering, VE-25M-1G, 500 Sessions, 3Yr']
+    platform_id: Z100
+    primary_mirror_address: 0:0:0:0:0:0:0:0
+    product: BIG-IP
+    secondary_mirror_address: 0:0:0:0:0:0:0:0
+    software_version: 12.1.3.4
+    timelimited_modules: []
+    timezone: America/Toronto
+    unicast_addresses: []
+device_group:
+  /Common/device_trust_group:
+    all_preferred_active: 0
+    autosync_enabled_state: STATE_ENABLED
+    description: ''
+    device: [/Common/adc01.lab.local]
+    full_load_on_sync_state: STATE_DISABLED
+    incremental_config_sync_size_maximum: 1024
+    network_failover_enabled_state: STATE_DISABLED
+    sync_status:
+      color: COLOR_GREEN
+      details: []
+      member_state: MEMBER_STATE_STANDALONE
+      status: Standalone
+      summary: null
+    type: DGT_SYNC_ONLY
+  /Common/gtm:
+    all_preferred_active: 0
+    autosync_enabled_state: STATE_DISABLED
+    description: ''
+    device: [/Common/adc01.lab.local]
+    full_load_on_sync_state: STATE_DISABLED
+    incremental_config_sync_size_maximum: 1024
+    network_failover_enabled_state: STATE_DISABLED
+    sync_status:
+      color: COLOR_GREEN
+      details: []
+      member_state: MEMBER_STATE_STANDALONE
+      status: Standalone
+      summary: null
+    type: DGT_SYNC_ONLY
+interface:
+  '1.1':
+    active_media: MT_NONE
+    actual_flow_control: FLOW_CONTROL_PAUSE_NONE
+    bundle_state: INTERFACE_BUNDLE_NOT_SUPPORTED
+    description: ''
+    dual_media_state: STATE_DISABLED
+    enabled_state: STATE_ENABLED
+    flow_control: FLOW_CONTROL_PAUSE_TX_RX
+    if_index: 48
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    lldp_admin_status: INTERFACE_LLDP_TXONLY
+    lldp_tlvmap: 130943
+    mac_address: 00:0C:29:B9:18:36
+    media: MT_10000T_FULL
+    media_option:
+      interface_name: '1.1'
+      media_options: [MT_10000T_FULL]
+    media_option_sfp:
+      interface_name: '1.1'
+      media_options: [MT_NONE, MT_AUTO]
+    media_sfp: MT_AUTO
+    media_speed: 10000
+    media_status: MEDIA_STATUS_UP
+    mtu: 1500
+    phy_master_slave_mode: PHY_MODE_AUTO
+    prefer_sfp_state: STATE_ENABLED
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sfp_media_state: STATE_DISABLED
+    stp_active_edge_port_state: STATE_ENABLED
+    stp_enabled_state: STATE_ENABLED
+    stp_link_type: STP_LINK_TYPE_AUTO
+    stp_protocol_detection_reset_state: STATE_DISABLED
+  '1.2':
+    active_media: MT_NONE
+    actual_flow_control: FLOW_CONTROL_PAUSE_NONE
+    bundle_state: INTERFACE_BUNDLE_NOT_SUPPORTED
+    description: ''
+    dual_media_state: STATE_DISABLED
+    enabled_state: STATE_ENABLED
+    flow_control: FLOW_CONTROL_PAUSE_TX_RX
+    if_index: 64
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    lldp_admin_status: INTERFACE_LLDP_TXONLY
+    lldp_tlvmap: 130943
+    mac_address: 00:0C:29:B9:18:40
+    media: MT_10000T_FULL
+    media_option:
+      interface_name: '1.2'
+      media_options: [MT_10000T_FULL]
+    media_option_sfp:
+      interface_name: '1.2'
+      media_options: [MT_NONE, MT_AUTO]
+    media_sfp: MT_AUTO
+    media_speed: 10000
+    media_status: MEDIA_STATUS_UP
+    mtu: 1500
+    phy_master_slave_mode: PHY_MODE_AUTO
+    prefer_sfp_state: STATE_ENABLED
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sfp_media_state: STATE_DISABLED
+    stp_active_edge_port_state: STATE_ENABLED
+    stp_enabled_state: STATE_ENABLED
+    stp_link_type: STP_LINK_TYPE_AUTO
+    stp_protocol_detection_reset_state: STATE_DISABLED
+  '1.3':
+    active_media: MT_NONE
+    actual_flow_control: FLOW_CONTROL_PAUSE_NONE
+    bundle_state: INTERFACE_BUNDLE_NOT_SUPPORTED
+    description: ''
+    dual_media_state: STATE_DISABLED
+    enabled_state: STATE_ENABLED
+    flow_control: FLOW_CONTROL_PAUSE_TX_RX
+    if_index: 80
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    lldp_admin_status: INTERFACE_LLDP_TXONLY
+    lldp_tlvmap: 130943
+    mac_address: 00:0C:29:B9:18:4A
+    media: MT_10000T_FULL
+    media_option:
+      interface_name: '1.3'
+      media_options: [MT_10000T_FULL]
+    media_option_sfp:
+      interface_name: '1.3'
+      media_options: [MT_NONE, MT_AUTO]
+    media_sfp: MT_AUTO
+    media_speed: 10000
+    media_status: MEDIA_STATUS_UP
+    mtu: 1500
+    phy_master_slave_mode: PHY_MODE_AUTO
+    prefer_sfp_state: STATE_ENABLED
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sfp_media_state: STATE_DISABLED
+    stp_active_edge_port_state: STATE_ENABLED
+    stp_enabled_state: STATE_ENABLED
+    stp_link_type: STP_LINK_TYPE_AUTO
+    stp_protocol_detection_reset_state: STATE_DISABLED
+  mgmt:
+    active_media: MT_100TX_FULL
+    actual_flow_control: FLOW_CONTROL_PAUSE_NONE
+    bundle_state: INTERFACE_BUNDLE_NOT_SUPPORTED
+    description: ''
+    dual_media_state: STATE_DISABLED
+    enabled_state: STATE_ENABLED
+    flow_control: FLOW_CONTROL_PAUSE_TX_RX
+    if_index: 32
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    lldp_admin_status: INTERFACE_LLDP_TXONLY
+    lldp_tlvmap: 130943
+    mac_address: 00:0C:29:B9:18:2C
+    media: MT_AUTO
+    media_option:
+      interface_name: mgmt
+      media_options: [MT_NONE, MT_AUTO, MT_10T_FULL, MT_10T_HALF, MT_100TX_FULL, MT_100TX_HALF]
+    media_option_sfp:
+      interface_name: mgmt
+      media_options: [MT_NONE, MT_AUTO]
+    media_sfp: MT_AUTO
+    media_speed: 100
+    media_status: MEDIA_STATUS_UP
+    mtu: 1500
+    phy_master_slave_mode: PHY_MODE_AUTO
+    prefer_sfp_state: STATE_ENABLED
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sfp_media_state: STATE_DISABLED
+    stp_active_edge_port_state: STATE_ENABLED
+    stp_enabled_state: STATE_ENABLED
+    stp_link_type: STP_LINK_TYPE_AUTO
+    stp_protocol_detection_reset_state: STATE_DISABLED
+key:
+  /Common/default:
+    file_name: /Common/default.key
+    flags: 0
+    key_info: {bit_length: 2048, id: /Common/default, key_type: KTYPE_RSA_PRIVATE,
+      security: STYPE_NORMAL}
+node:
+  /Common/100.127.215.237:
+    address: 100.127.215.237
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: 100.127.215.237
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/172.16.100.100:
+    address: 172.16.100.100
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: 172.16.100.100
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/node-1:
+    address: 10.10.10.10
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: node-1
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/node-11:
+    address: 10.10.10.11
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: node-11
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/node-2:
+    address: 10.10.10.20
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: node-2
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/node-21:
+    address: 10.10.10.21
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: node-21
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/node-31:
+    address: 10.10.10.31
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: node-31
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+  /Common/node-41:
+    address: 10.10.10.41
+    connection_limit: 0
+    description: ''
+    dynamic_ratio: 1
+    monitor_instance: []
+    monitor_rule:
+      monitor_templates: []
+      quorum: 0
+      type: MONITOR_RULE_TYPE_NONE
+    monitor_status: MONITOR_STATUS_UNCHECKED
+    name: node-41
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: Node address does not have service checking enabled}
+    rate_limit: 0
+    ratio: 1
+    session_status: SESSION_STATUS_ENABLED
+pool:
+  /Common/custome-pool:
+    action_on_service_down: SERVICE_DOWN_ACTION_NONE
+    active_member_count: 0
+    aggregate_dynamic_ratio: 0
+    allow_nat_state: STATE_ENABLED
+    allow_snat_state: STATE_ENABLED
+    client_ip_tos: 65535
+    client_link_qos: 65535
+    description: ''
+    gateway_failsafe_device: ''
+    ignore_persisted_weight_state: STATE_DISABLED
+    lb_method: round-robin
+    member:
+    - {address: /Common/100.127.215.237, port: 4443}
+    - {address: /Common/172.16.100.100, port: 443}
+    minimum_active_member: 0
+    minimum_up_member: 0
+    minimum_up_member_action: HA_ACTION_FAILOVER
+    minimum_up_member_enabled_state: STATE_DISABLED
+    monitor_association:
+      monitor_rule:
+        monitor_templates: [/Common/custom-443-monitor]
+        quorum: 0
+        type: MONITOR_RULE_TYPE_SINGLE
+      pool_name: /Common/custome-pool
+    monitor_instance:
+    - enabled_state: 1
+      instance:
+        instance_definition:
+          address_type: ATYPE_EXPLICIT_ADDRESS_EXPLICIT_PORT
+          ipport: {address: 100.127.215.237, port: 4443}
+        template_name: /Common/custom-443-monitor
+      instance_state: INSTANCE_STATE_DOWN
+    - enabled_state: 1
+      instance:
+        instance_definition:
+          address_type: ATYPE_EXPLICIT_ADDRESS_EXPLICIT_PORT
+          ipport: {address: 172.16.100.100, port: 443}
+        template_name: /Common/custom-443-monitor
+      instance_state: INSTANCE_STATE_DOWN
+    name: custome-pool
+    object_status: {availability_status: AVAILABILITY_STATUS_RED, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: The children pool member(s) are down}
+    profile: []
+    queue_depth_limit: 0
+    queue_on_connection_limit_state: STATE_DISABLED
+    queue_time_limit: 0
+    reselect_tries: 0
+    server_ip_tos: 65535
+    server_link_qos: 65535
+    simple_timeout: 0
+    slow_ramp_time: 10
+  /Common/test_pool:
+    action_on_service_down: SERVICE_DOWN_ACTION_NONE
+    active_member_count: 0
+    aggregate_dynamic_ratio: 0
+    allow_nat_state: STATE_ENABLED
+    allow_snat_state: STATE_ENABLED
+    client_ip_tos: 65535
+    client_link_qos: 65535
+    description: ''
+    gateway_failsafe_device: ''
+    ignore_persisted_weight_state: STATE_DISABLED
+    lb_method: round-robin
+    member:
+    - {address: /Common/node-1, port: 80}
+    - {address: /Common/node-2, port: 80}
+    minimum_active_member: 0
+    minimum_up_member: 0
+    minimum_up_member_action: HA_ACTION_FAILOVER
+    minimum_up_member_enabled_state: STATE_DISABLED
+    monitor_association:
+      monitor_rule:
+        monitor_templates: []
+        quorum: 0
+        type: MONITOR_RULE_TYPE_NONE
+      pool_name: /Common/test_pool
+    monitor_instance: []
+    name: test_pool
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    profile: []
+    queue_depth_limit: 0
+    queue_on_connection_limit_state: STATE_DISABLED
+    queue_time_limit: 0
+    reselect_tries: 0
+    server_ip_tos: 65535
+    server_link_qos: 65535
+    simple_timeout: 0
+    slow_ramp_time: 10
+  /Common/test_pool-2:
+    action_on_service_down: SERVICE_DOWN_ACTION_NONE
+    active_member_count: 0
+    aggregate_dynamic_ratio: 0
+    allow_nat_state: STATE_ENABLED
+    allow_snat_state: STATE_ENABLED
+    client_ip_tos: 65535
+    client_link_qos: 65535
+    description: ''
+    gateway_failsafe_device: ''
+    ignore_persisted_weight_state: STATE_DISABLED
+    lb_method: round-robin
+    member:
+    - {address: /Common/node-11, port: 80}
+    - {address: /Common/node-21, port: 80}
+    - {address: /Common/node-21, port: 88}
+    minimum_active_member: 0
+    minimum_up_member: 0
+    minimum_up_member_action: HA_ACTION_FAILOVER
+    minimum_up_member_enabled_state: STATE_DISABLED
+    monitor_association:
+      monitor_rule:
+        monitor_templates: []
+        quorum: 0
+        type: MONITOR_RULE_TYPE_NONE
+      pool_name: /Common/test_pool-2
+    monitor_instance: []
+    name: test_pool-2
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    profile: []
+    queue_depth_limit: 0
+    queue_on_connection_limit_state: STATE_DISABLED
+    queue_time_limit: 0
+    reselect_tries: 0
+    server_ip_tos: 65535
+    server_link_qos: 65535
+    simple_timeout: 0
+    slow_ramp_time: 10
+  /Common/test_pool-3:
+    action_on_service_down: SERVICE_DOWN_ACTION_NONE
+    active_member_count: 0
+    aggregate_dynamic_ratio: 0
+    allow_nat_state: STATE_ENABLED
+    allow_snat_state: STATE_ENABLED
+    client_ip_tos: 65535
+    client_link_qos: 65535
+    description: ''
+    gateway_failsafe_device: ''
+    ignore_persisted_weight_state: STATE_DISABLED
+    lb_method: round-robin
+    member:
+    - {address: /Common/node-31, port: 80}
+    - {address: /Common/node-41, port: 80}
+    minimum_active_member: 0
+    minimum_up_member: 0
+    minimum_up_member_action: HA_ACTION_FAILOVER
+    minimum_up_member_enabled_state: STATE_DISABLED
+    monitor_association:
+      monitor_rule:
+        monitor_templates: []
+        quorum: 0
+        type: MONITOR_RULE_TYPE_NONE
+      pool_name: /Common/test_pool-3
+    monitor_instance: []
+    name: test_pool-3
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    profile: []
+    queue_depth_limit: 0
+    queue_on_connection_limit_state: STATE_DISABLED
+    queue_time_limit: 0
+    reselect_tries: 0
+    server_ip_tos: 65535
+    server_link_qos: 65535
+    simple_timeout: 0
+    slow_ramp_time: 10
+provision:
+  list: [afm, am, sam, asm, avr, fps, lc, ltm, pem, swg, gtm, ilx]
+  provisioned_list: [ltm, gtm, ilx]
+rule:
+  /Common/SNAT-10-197-225: {definition: 'when CLIENT_ACCEPTED { snat 10.197.225.[getfield
+      [IP::client_addr] "." 4] }
+
+      ', description: '', verification_status: VERIFICATION_STATUS_NONE}
+  /Common/_sys_APM_ExchangeSupport_OA_BasicAuth: {definition: "    # Global variables\n\
+      \    # static::POLICY_RESULT_CACHE_AUTHFAILED\n    #     Administrator can set\
+      \ this into 1, when there is a necessity to cache failed policy result.\n  \
+      \  #     This may be needed to avoid account locked caused by the Active Sync\
+      \ device when it uses wrong passwords.\n    #     One possible scenario, is\
+      \ that when the user changes the password in Active Directory, but missed to\
+      \ changed in their devices.\n    # Responses\n    # On denied result\n    #\
+      \     Administrator can customize the responses to the device depends on more\
+      \ complex conditions when necessary.\n    #     In those cases, please use ACCESS::respond\
+      \ command.\n    #     The following is the syntax of ACCESS::respond\n    #\
+      \     ACCESS::respond <status code> [ content <body> ] [ <Additional Header>\
+      \ <Additional Header value>* ]\n    #     e.g. ACCESS::respond 401 content \"\
+      Error: Denied\" WWW-Authenticate \"basic realm=\\\"f5.com\\\"\" Connection close\n\
+      \    when RULE_INIT {\n        # Please set the following global variables for\
+      \ customized responses.\n        set static::actsync_401_http_body \"<html><title>Authentication\
+      \ Failured</title><body>Error: Authentication Failure</body></html>\"\n    \
+      \    set static::actsync_503_http_body \"<html><title>Service is not available</title><body>Error:\
+      \ Service is not available</body></html>\"\n        set static::ACCESS_LOG_PREFIX\
+      \                 \"01490000:7:\"\n\n        # Second Virtual Server name for\
+      \ 401 NTLM responder\n        set static::ACCESS_SECOND_VIRTUAL_NAME       \
+      \ \"_ACCESS_401_NTLM_responder_HTTPS\"\n\n        set static::POLICY_INPROGRESS\
+      \                 \"policy_inprogress\"\n        set static::POLICY_AUTHFAILED\
+      \                 \"policy_authfailed\"\n        # The request with huge content\
+      \ length can not be used for starting ACCESS session.\n        # This kind of\
+      \ request will be put on hold, and this iRule will try to use another\n    \
+      \    # request to start the session. The following value is used for Outlook\
+      \ Anywhere.\n        set static::OA_MAGIC_CONTENT_LEN              1073741824\n\
+      \n        # Similar with OutlookAnywhere case, ACCESS can not use the request\
+      \ which is\n        # larger then following size. This becomes an issue with\
+      \ application that using\n        # Exchange Web Service as its main protocol\
+      \ such as Mac OS X applications\n        # (e.g. Mail app, Microsoft Entourage,\
+      \ etc)\n        # This kind of request will be put on hold, and this iRule will\
+      \ try to use another\n        # request to start the session.\n        set static::FIRST_BIG_POST_CONTENT_LEN\
+      \        640000\n\n        # Set it into 1 if the backend EWS handler accepts\
+      \ HTTP Basic Authentication.\n        set static::EWS_BKEND_BASIC_AUTH     \
+      \         0\n        # The following variable controls the polling mechanism.\n\
+      \        set static::POLICY_RESULT_POLL_INTERVAL       250\n        set static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \  600\n\n        # Set this global variable to 1 for caching authentication\
+      \ failure\n        # Useful for avoiding account locked out.\n        set static::POLICY_RESULT_CACHE_AUTHFAILED\
+      \    0\n\n        # set this global variable to set alternative timeout for\
+      \ particular session\n        set static::POLICY_ALT_INACTIVITY_TIMEOUT    \
+      \ 120\n\n        set static::ACCESS_USERKEY_TBLNAME            \"_access_userkey\"\
+      \n\n\n        set static::ACCESS_DEL_COOKIE_HDR_VAL         \"MRHSession=deleted;\
+      \ expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/\"\n\n        log -noname accesscontrol.local1.debug\
+      \ \"01490000:7: EWS_BKEND_BASIC_AUTH = $static::EWS_BKEND_BASIC_AUTH\"\n   \
+      \ }\n    when ACCESS_ACL_ALLOWED {\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX [HTTP::method] [HTTP::uri] [HTTP::header Content-Length]\"\
+      \n\n        # MSFT Exchange's EWS request handler always requesting NTLM even\
+      \ the connection has been\n        # already authenticated if there is a HTTP\
+      \ Basic Auth in the request.\n        if { [ info exists f_exchange_web_service\
+      \ ] && $f_exchange_web_service  == 1 }  {\n            if { $static::EWS_BKEND_BASIC_AUTH\
+      \ == 0 } {\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Removing HTTP Basic Authorization header\"\n                HTTP::header remove\
+      \ Authorization\n            }\n        }\n    }\n\n    when HTTP_REQUEST {\n\
+      \        set http_path                       [ string tolower [HTTP::path] ]\n\
+      \        set f_clientless_mode               0\n        set f_alt_inactivity_timeout\
+      \        0\n        set f_rpc_over_http                 0\n        set f_exchange_web_service\
+      \          0\n        set f_auto_discover                 0\n        set f_activesync\
+      \                    0\n        set f_offline_address_book          0\n    \
+      \    set f_availability_service          0\n\n        #  Here put appropriate\
+      \ pool when necessary.\n        switch -glob $http_path {\n        \"/rpc/rpcproxy.dll\"\
+      \ {\n            # Supports for RPC over HTTP. (Outlook Anywhere)\n        \
+      \    set f_rpc_over_http 1\n        }\n        \"/autodiscover/autodiscover.xml\"\
+      \ {\n            # Supports for Auto Discover protocol.\n            set f_auto_discover\
+      \ 1\n            # This request does not require long inactivity timeout.\n\
+      \            # Don't use this for now\n            set f_alt_inactivity_timeout\
+      \ 0\n        }\n        \"/microsoft-server-activesync\" {\n            # Supports\
+      \ for ActiveSync\n            set f_activesync 1\n        }\n        \"/oab/*\"\
+      \ {\n            # Supports for Offline Address Book\n            set f_offline_address_book\
+      \ 1\n            # Don't use this for now\n            set f_alt_inactivity_timeout\
+      \ 0\n        }\n        \"/ews/*\" {\n            # Support for Exchange Web\
+      \ Service\n            # Outlook's Availability Service borrows this protocol.\n\
+      \            set f_exchange_web_service 1\n        }\n        \"/as/*\" {\n\
+      \            # Support for Availability Service.\n            # do nothing for\
+      \ now. (Untested)\n            set f_availability_service 1\n        }\n   \
+      \     default {\n            return\n        }\n        }\n\n        set f_reqside_set_sess_id\
+      \           0\n        set http_method                     [HTTP::method]\n\
+      \        set http_hdr_host                   [HTTP::host]\n        set http_hdr_uagent\
+      \                 [HTTP::header User-Agent]\n        set http_uri          \
+      \              [HTTP::uri]\n        set http_content_len                [HTTP::header\
+      \ Content-Length]\n        set MRHSession_cookie               [HTTP::cookie\
+      \ value MRHSession]\n        set auth_info_b64enc                \"\"\n\n  \
+      \      if { ! [ info exists src_ip ] } {\n            set src_ip           \
+      \                 [IP::remote_addr]\n        }\n        if { ! [ info exists\
+      \ PROFILE_POLICY_TIMEOUT ] } {\n            set PROFILE_POLICY_TIMEOUT     \
+      \       [PROFILE::access access_policy_timeout]\n        }\n        if { ! [\
+      \ info exists PROFILE_MAX_SESS_TIMEOUT ] } {\n            set PROFILE_MAX_SESS_TIMEOUT\
+      \          [PROFILE::access max_session_timeout]\n        }\n        if { !\
+      \ [ info exists PROFILE_RESTRICT_SINGLE_IP ] } {\n            set PROFILE_RESTRICT_SINGLE_IP\
+      \        1\n        }\n\n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ method: $http_method\"\n        log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX Src IP: $src_ip\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX User-Agent: $http_hdr_uagent\"\n        log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX HTTP uri: $http_uri\"\
+      \n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP len: $http_content_len\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Restrict-to-single-client-ip: $PROFILE_RESTRICT_SINGLE_IP\"\
+      \n\n        # First, do we have valid MRHSession cookie.\n        if { $MRHSession_cookie\
+      \ != \"\" } {\n            if { [ACCESS::session exists -state_allow -sid $MRHSession_cookie]\
+      \ } {\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *VALID* MRHSession cookie: $MRHSession_cookie\"\n            } else {\n\
+      \                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *INVALID* MRHSession cookie: $MRHSession_cookie\"\n                set\
+      \ MRHSession_cookie \"\"\n                HTTP::cookie remove MRHSession\n \
+      \           }\n        }\n\n        set http_hdr_auth [HTTP::header Authorization]\n\
+      \        if { [ string match -nocase {basic *} $http_hdr_auth ] != 1 } {\n \
+      \           log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Not basic authentication. Ignore received auth header\"\n            set http_hdr_auth\
+      \ \"\"\n        }\n\n        if { $http_hdr_auth == \"\" } {\n            log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX No/Empty Auth\
+      \ header\"\n            # clean up the cookie\n            if { $MRHSession_cookie\
+      \ == \"\" } {\n                HTTP::respond 401 content  $static::actsync_401_http_body\
+      \ WWW-Authenticate \"Basic realm=\\\"[HTTP::header Host]\\\"\" Set-Cookie $static::ACCESS_DEL_COOKIE_HDR_VAL\
+      \ Connection Close\n                return\n            }\n            # Do\
+      \ nothing if we have a valid MRHSession cookie.\n        }\n\n        set f_release_request\
+      \           0\n        # Optimization for clients which support cookie\n   \
+      \     if { $MRHSession_cookie != \"\" } {\n            # Default profile access\
+      \ setting is false\n            if { $PROFILE_RESTRICT_SINGLE_IP == 0 } {\n\
+      \                set f_release_request 1\n            }\n            elseif\
+      \ { [ IP::addr $src_ip equals [ ACCESS::session data get -sid $MRHSession_cookie\
+      \ \"session.user.clientip\" ] ] } {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX source IP matched\"\n                set f_release_request\
+      \ 1\n            }\n            else {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX source IP does not matched\"\n              \
+      \  set MRHSession_cookie \"\"\n                HTTP::cookie remove MRHSession\n\
+      \            }\n        }\n\n        if { $f_release_request == 0 } {\n    \
+      \        set apm_username [string tolower [HTTP::username]]\n            set\
+      \ apm_password [HTTP::password]\n            if { $PROFILE_RESTRICT_SINGLE_IP\
+      \ == 0 } {\n                binary scan [md5 \"$apm_password\"] H* user_hash\n\
+      \            }\n            else {\n                binary scan [md5 \"$apm_password$src_ip\"\
+      ] H* user_hash\n            }\n            set user_key    \"$apm_username.$user_hash\"\
+      \n            unset user_hash\n\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX HTTP Hdr Auth: $http_hdr_auth\"\n           \
+      \ log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX apm_username:\
+      \ $apm_username\"\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ user_key = $user_key\"\n            set apm_cookie_list             [ ACCESS::user\
+      \ getsid $user_key ]\n            if { [ llength $apm_cookie_list ] != 0 } {\n\
+      \                set apm_cookie [ ACCESS::user getkey [ lindex $apm_cookie_list\
+      \ 0 ] ]\n                if { $apm_cookie != \"\" } {\n                    HTTP::cookie\
+      \ insert name MRHSession value $apm_cookie\n                    set f_release_request\
+      \ 1\n                }\n            }\n        }\n\n        if { $http_content_len\
+      \ ==  $static::OA_MAGIC_CONTENT_LEN } {\n            set f_oa_magic_content_len\
+      \ 1\n        }\n\n        set f_sleep_here 0\n        set retry 1\n\n      \
+      \  while { $f_release_request == 0 && $retry <=  $static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \ } {\n\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Trying #$retry for $http_method $http_uri $http_content_len\"\n\n        \
+      \    log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Reading\
+      \ $user_key from table $static::ACCESS_USERKEY_TBLNAME\"\n\n            set\
+      \ apm_cookie [table lookup -subtable  $static::ACCESS_USERKEY_TBLNAME -notouch\
+      \ $user_key]\n            if { $apm_cookie != \"\" } {\n                log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Verifying\
+      \ table cookie = $apm_cookie\"\n\n                # Accessing SessionDB is not\
+      \ that cheap. Here we are trying to check known value.\n                if {\
+      \ $apm_cookie == \"policy_authfailed\" || $apm_cookie == \"policy_inprogress\"\
+      } {\n                    # Do nothing\n                } elseif  { ! [ ACCESS::session\
+      \ exists $apm_cookie ] } {\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX table cookie = $apm_cookie is out-of-sync\"\n\
+      \                    # Table value is out of sync. Ignores it.\n           \
+      \         set apm_cookie \"\"\n                }\n            }\n\n        \
+      \    switch $apm_cookie {\n            \"\" {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX NO APM Cookie found\"\n\n                if {\
+      \ [ info exists f_oa_magic_content_len ] && $f_oa_magic_content_len == 1 } {\n\
+      \                    # Outlook Anywhere request comes in pair. The one with\
+      \ 1G payload is not usable\n                    # for creating new session since\
+      \ 1G content-length is intended for client to upload\n                    #\
+      \ the data when needed.\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Start to wait $static::POLICY_RESULT_POLL_INTERVAL\
+      \ ms for request with magic content-len\"\n                    set f_sleep_here\
+      \ 1\n                } elseif { [ info exists f_exchange_web_service ] && $f_exchange_web_service\
+      \ == 1 && $http_content_len > $static::FIRST_BIG_POST_CONTENT_LEN } {\n    \
+      \                # Here we are getting large EWS request, which can't be used\
+      \ for starting new session\n                    # in clientless-mode. Have it\
+      \ here waiting for next smaller one.\n                    # We are holding the\
+      \ request here in HTTP filter, and HTTP filter automatically\n             \
+      \       # clamping down the TCP window when necessary.\n                   \
+      \ log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Start\
+      \ to wait $static::POLICY_RESULT_POLL_INTERVAL ms for big EWS request\"\n  \
+      \                  set f_sleep_here 1\n                } else {\n          \
+      \         set apm_cookie               \"policy_inprogress\"\n             \
+      \      set f_reqside_set_sess_id    1\n                   set f_release_request\
+      \        1\n                }\n            }\n            \"policy_authfailed\"\
+      \ {\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Found $user_key with AUTH_FAILED\"\n                HTTP::respond 401 content\
+      \  $static::actsync_401_http_body\n                set f_release_request 1\n\
+      \            }\n            \"policy_inprogress\" {\n                if { [\
+      \ info exists f_activesync ] && ($f_activesync == 1) } {\n                 \
+      \   # For ActiveSync requests, aggressively starts new session.\n          \
+      \          set f_reqside_set_sess_id    1\n                    set f_release_request\
+      \        1\n                } else {\n                    set f_sleep_here 1\n\
+      \                }\n            }\n            default {\n                log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Using MRHSession\
+      \ = $apm_cookie\"\n                HTTP::header insert Cookie \"MRHSession=$apm_cookie\"\
+      \n                set f_release_request 1\n            }\n            }\n\n\
+      \            if { $f_reqside_set_sess_id == 1 } {\n                set f_reqside_set_sess_id\
+      \ 0\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Setting $user_key=$apm_cookie $PROFILE_POLICY_TIMEOUT $PROFILE_POLICY_TIMEOUT\"\
+      \n                set f_clientless_mode 1\n                HTTP::cookie remove\
+      \ MRHSession\n                HTTP::header insert \"clientless-mode\" 1\n  \
+      \              HTTP::header insert \"username\" $apm_username\n            \
+      \    HTTP::header insert \"password\" $apm_password\n                table set\
+      \ -subtable  $static::ACCESS_USERKEY_TBLNAME $user_key $apm_cookie $PROFILE_POLICY_TIMEOUT\
+      \ $PROFILE_POLICY_TIMEOUT\n            }\n\n            if { $f_sleep_here ==\
+      \ 1 } {\n                set f_sleep_here 0\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Waiting  $static::POLICY_RESULT_POLL_INTERVAL\
+      \ ms for $http_method $http_uri\"\n                after  $static::POLICY_RESULT_POLL_INTERVAL\n\
+      \            }\n\n            incr retry\n        }\n\n        if { ($f_release_request\
+      \ == 0) && ($retry >=  $static::POLICY_RESULT_POLL_MAXRETRYCYCLE) } {\n    \
+      \        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Policy did not finish in [expr { $static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \ * $static::POLICY_RESULT_POLL_INTERVAL } ] ms. Close connection for $http_method\
+      \ $http_uri\"\n\n            table delete -subtable  $static::ACCESS_USERKEY_TBLNAME\
+      \ $user_key\n            ACCESS::disable\n            TCP::close\n         \
+      \   return\n        }\n\n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Releasing request $http_method $http_uri\"\n    }\n\n    when ACCESS_SESSION_STARTED\
+      \ {\n        if { [ info exists user_key ] } {\n\n            ACCESS::session\
+      \ data set \"session.user.uuid\" $user_key\n            ACCESS::session data\
+      \ set \"session.user.microsoft-exchange-client\" 1\n\n            if { [ info\
+      \ exists f_activesync ] && $f_activesync == 1 } {\n                ACCESS::session\
+      \ data set \"session.user.microsoft-activesync\" 1\n            }\n        \
+      \    elseif { [ info exists f_auto_discover ] && $f_auto_discover == 1 } {\n\
+      \                ACCESS::session data set \"session.user.microsoft-autodiscover\"\
+      \ 1\n            }\n            elseif { [ info exists f_availability_service\
+      \ ] && $f_availability_service == 1 } {\n                ACCESS::session data\
+      \ set \"session.user.microsoft-availabilityservice\" 1\n            }\n    \
+      \        elseif { [ info exists f_rpc_over_http ] && $f_rpc_over_http == 1 }\
+      \ {\n                ACCESS::session data set \"session.user.microsoft-rpcoverhttp\"\
+      \ 1\n            }\n            elseif { [ info exists f_offline_address_book\
+      \ ] && $f_offline_address_book == 1 } {\n                ACCESS::session data\
+      \ set \"session.user.microsoft-offlineaddressbook\" 1\n            }\n     \
+      \       elseif { [ info exists f_exchange_web_service ] && $f_exchange_web_service\
+      \ == 1 } {\n                ACCESS::session data set \"session.user.microsoft-exchangewebservice\"\
+      \ 1\n            }\n        }\n        if { [ info exists f_alt_inactivity_timeout\
+      \ ] && $f_alt_inactivity_timeout == 1 } {\n            ACCESS::session data\
+      \ set \"session.inactivity_timeout\"  $static::POLICY_ALT_INACTIVITY_TIMEOUT\n\
+      \        }\n    }\n\n    when ACCESS_POLICY_COMPLETED {\n        if { ! [ info\
+      \ exists user_key ] } {\n            return\n        }\n\n        set user_key_value\
+      \ \"\"\n        set f_delete_session 0\n        set policy_result [ACCESS::policy\
+      \ result]\n        set sid [ ACCESS::session sid ]\n\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX ACCESS_POLICY_COMPLETED: policy_result = \\\"\
+      $policy_result\\\" user_key = \\\"$user_key\\\" sid = \\\"$sid\\\"\"\n\n   \
+      \     set inactivity_timeout [ACCESS::session data get \"session.inactivity_timeout\"\
+      ]\n        set max_sess_timeout [ACCESS::session data get \"session.max_session_timeout\"\
+      ]\n        if { $max_sess_timeout == \"\" } {\n             set max_sess_timeout\
+      \ $PROFILE_MAX_SESS_TIMEOUT\n        }\n\n        switch $policy_result {\n\
+      \        \"allow\" {\n            # We depends on this table record self-cleanup\
+      \ capability in order to\n            # indirectly sync with session DB.\n \
+      \           set user_key_value $sid\n\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Result: Allow: $user_key => $sid $inactivity_timeout\
+      \ $max_sess_timeout\"\n            log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX user_key_value = $user_key_value\"\n            log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX sid = $sid\"\
+      \n        }\n        \"deny\" {\n            # When necessary the ******** here\
+      \ can check appropriate session variable\n            # and decide what response\
+      \ more appropriate then this default response.\n            ACCESS::respond\
+      \ 401 content  $static::actsync_401_http_body Set-Cookie $static::ACCESS_DEL_COOKIE_HDR_VAL\
+      \ Connection Close\n            if {  $static::POLICY_RESULT_CACHE_AUTHFAILED\
+      \ == 1 } {\n                set user_key_value  $static::POLICY_AUTHFAILED\n\
+      \            } else {\n                set f_delete_session  1\n           \
+      \ }\n        }\n        default {\n            ACCESS::respond 503 content \
+      \ $static::actsync_503_http_body Connection Close\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Got unsupported policy result for $user_key ($sid)\"\
+      \n            set f_delete_session  1\n        }\n        }\n        if { $user_key_value\
+      \ != \"\" } {\n           log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Setting $user_key => $user_key_value $inactivity_timeout $max_sess_timeout\
+      \ in table $static::ACCESS_USERKEY_TBLNAME\"\n\n           table set -subtable\
+      \  $static::ACCESS_USERKEY_TBLNAME $user_key $user_key_value $inactivity_timeout\
+      \ $max_sess_timeout\n        } else {\n           log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Deleting $user_key in table $static::ACCESS_USERKEY_TBLNAME\"\
+      \n\n           table delete -subtable  $static::ACCESS_USERKEY_TBLNAME $user_key\n\
+      \        }\n\n        if { $f_delete_session == 1 } {\n           ACCESS::session\
+      \ remove\n           set f_delete_session 0\n           log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Removing the session for $user_key.\"\n     \
+      \   }\n    }\ndefinition-signature CZnUb3niz9wZPWvOmjDB0Dy4ixqjBEhIZrAVGt8VYe7+wZkhcBUFTADz3S1y5uomVwhRkGL20PLH7tfanDlpr3+IppgAGQlp98sPUl5ndEoWA4Rr90QiRGNRl/V7jWK58SOdJCQOirnutVMoeYjBWLwuprXGts08PO0WML5s0xJNOY7WPuGNeG+7Ht2pIB0vu80CgnCNGZJGZH0QR3kMVOx3yUN0ro5bAOmQ/XWel4qkj0F5DN9ufvsmKtTvb+Lc3y+5PHGbbFAQIrZ7lntZUJl/F8e/d26HE3spmZzQpPzi16qYWaMOxbvT6oedxpyhwbmJLiRNGyZmnT6kHj93FA==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_APM_ExchangeSupport_OA_NtlmAuth: {definition: "when RULE_INIT {\n \
+      \       set static::POLICY_INPROGRESS                 \"policy_inprogress\"\n\
+      \        set static::POLICY_FAILED                     \"policy_failed\"\n \
+      \       set static::POLICY_SUCCEED                    \"policy_succeed\"\n \
+      \       set static::POLICY_DONE_WAIT_SEC              5\n\n        set static::FIRST_BIG_POST_CONTENT_LEN\
+      \        640000\n        set static::POLICY_RESULT_POLL_INTERVAL       100\n\
+      \        set static::POLICY_RESULT_POLL_MAXRETRYCYCLE  100\n        set static::ACCESS_USERKEY_TBLNAME\
+      \            \"_access_userkey\"\n        set static::ACCESS_LOG_PREFIX    \
+      \             \"01490000:7:\"\n\n        set static::USE_NTLM_AUTH         \
+      \            0\n        set static::USE_BASIC_AUTH                    1\n  \
+      \      set static::USE_NTLM_BASIC_AUTH               2\n\n        set static::URL_DEFAULT\
+      \                       0\n        set static::URL_RPC_OVER_HTTP           \
+      \      1\n        set static::URL_AUTODISCOVER                  2\n        set\
+      \ static::URL_ACTIVE_SYNC                   3\n        set static::URL_OFFLINEADDRESSBOOK\
+      \            4\n        set static::URL_EXCHANGEWEBSERVICE            5\n\n\
+      \        set static::RECVD_AUTH_NONE                   0\n        set static::RECVD_AUTH_NTLM\
+      \                   1\n        set static::RECVD_AUTH_BASIC                \
+      \  2\n\n        set static::ACCESS_DEL_COOKIE_HDR_VAL         \"MRHSession=deleted;\
+      \ \\\n                                                       expires=Thu, 01-Jan-1970\
+      \ 00:00:01 GMT;\\\n                                                       path=/\"\
+      \n\n    }\n\n    when HTTP_REQUEST {\n        set http_path                \
+      \       [string tolower [HTTP::path]]\n        set url_path                \
+      \        $static::URL_DEFAULT\n        set use_auth                        $static::USE_NTLM_AUTH\n\
+      \        set f_disable_sso                   0\n\n        switch -glob $http_path\
+      \ {\n        \"/rpc/rpcproxy.dll\" {\n            set url_path             \
+      \       $static::URL_RPC_OVER_HTTP\n        }\n        \"/autodiscover/autodiscover.xml\"\
+      \ {\n            set url_path                    $static::URL_ACTIVE_SYNC\n\
+      \            # Need to support both NTLM and Basic authentication for this URL\n\
+      \            set use_auth                    $static::USE_NTLM_BASIC_AUTH\n\
+      \        }\n        \"/microsoft-server-activesync*\" {\n            set url_path\
+      \                    $static::URL_ACTIVE_SYNC\n            # Use only Basic\
+      \ authentication for this URL\n            set use_auth                    $static::USE_BASIC_AUTH\n\
+      \            set f_disable_sso               1\n        }\n        \"/oab*\"\
+      \ {\n            set url_path                    $static::URL_OFFLINEADDRESSBOOK\n\
+      \        }\n        \"/ews*\" {\n            set url_path                  \
+      \  $static::URL_EXCHANGEWEBSERVICE\n        }\n        default {\n         \
+      \   ECA::disable\n            return\n        }\n        }\n\n        if { !\
+      \ [ info exists f_ntlm_auth_succeed ] } {\n            set f_ntlm_auth_succeed\
+      \         0\n        }\n        if { ! [ info exists sid_cache ] } {\n     \
+      \       set sid_cache                         \"\"\n        }\n        if {\
+      \ ! [ info exists PROFILE_POLICY_TIMEOUT ] } { \n            set PROFILE_POLICY_TIMEOUT\
+      \            [PROFILE::access access_policy_timeout]\n        }\n        if\
+      \ { ! [ info exists PROFILE_MAX_SESS_TIMEOUT ] } {\n            set PROFILE_MAX_SESS_TIMEOUT\
+      \          [PROFILE::access max_session_timeout]\n        }\n        if { !\
+      \ [ info exists src_ip ] } {\n            set src_ip                       \
+      \     [IP::remote_addr]\n        }\n        if { ! [ info exists PROFILE_RESTRICT_SINGLE_IP\
+      \ ] } {\n            set PROFILE_RESTRICT_SINGLE_IP        1\n        }\n\n\
+      \        set http_method                     [HTTP::method]\n        set http_hdr_host\
+      \                   [HTTP::host]\n        set http_hdr_uagent              \
+      \   [HTTP::header User-Agent]\n        set http_uri                        [HTTP::uri]\n\
+      \        set http_content_len                [HTTP::header Content-Length]\n\
+      \        set MRHSession_cookie               [HTTP::cookie value MRHSession]\n\
+      \n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ method:      $http_method\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Src IP:      $src_ip\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX User-Agent:  $http_hdr_uagent\"\n        log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX HTTP uri:\
+      \    $http_uri\"\n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP len:    $http_content_len\"\n\n        if { ! [ info exists ECA_METADATA_ARG\
+      \ ] } {\n            # Generating argument for ECA::metadata\n            #\
+      \ The NTLM configuration name is derived from assigned virtual name with the\
+      \ algorithm as follows:\n            # <virtual-fullpath> ::= <folder-path>\"\
+      /\"<virtual-basename> as \"/\" is the last \"/\" char.\n            # <config-fullpath>\
+      \  ::= <folder-path>\"/\" \"exch_ntlm\" \"_\" <virtual-basename>\n         \
+      \   # e.g.  Let us say the virtual name is \"/prod/exch/vs1\", The folder path\
+      \ is \"/prod/exch/\",\n            #       then object name will be \"/prod/exch/exch_ntlm_vs1\"\
+      .\n            set vs_name [virtual name]\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX virtual:     $vs_name\"\n            set slash_index\
+      \ [ string last / $vs_name ]\n            if { $slash_index == -1 } {\n    \
+      \            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Error: the virtual name does not contain folder information\"\n          \
+      \      ACCESS::disable\n                TCP::close\n                return\n\
+      \            }\n            set ECA_METADATA_ARG    \"select_ntlm:\"\n     \
+      \       append ECA_METADATA_ARG [ string range $vs_name 0 $slash_index ]\n \
+      \           append ECA_METADATA_ARG \"exch_ntlm_\"\n            append ECA_METADATA_ARG\
+      \ [ string range $vs_name [ expr { $slash_index + 1 } ] end ]\n            unset\
+      \ slash_index\n            unset vs_name\n        }\n\n        if { $use_auth\
+      \ == $static::USE_NTLM_AUTH } {\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Enable ECA: $ECA_METADATA_ARG\"\n           \
+      \ ECA::enable\n            ECA::select $ECA_METADATA_ARG\n            return\n\
+      \        } else {\n            set recvd_auth                      $static::RECVD_AUTH_NONE\n\
+      \            set http_hdr_auth                   [HTTP::header Authorization]\n\
+      \            set auth_data                       [split $http_hdr_auth \" \"\
+      ]\n            if { $http_hdr_auth != \"\" } {\n                if { [ llength\
+      \ $auth_data ] == 2 } {\n                    set auth_scheme [ lindex $auth_data\
+      \ 0]\n                    if { [string equal -nocase $auth_scheme \"ntlm\" ]\
+      \ == 1 } {\n                        log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX Recv'd HTTP NTLM Authentication\"\n             \
+      \           set recvd_auth          $static::RECVD_AUTH_NTLM\n             \
+      \       } elseif { [ string equal -nocase [ lindex $auth_data 0] \"basic\" ]\
+      \ == 1 } {\n                        log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX Recv'd HTTP Basic Authentication\"\n            \
+      \            set recvd_auth          $static::RECVD_AUTH_BASIC\n           \
+      \             set user                [string tolower [HTTP::username]]\n  \
+      \                      set password            [HTTP::password]\n          \
+      \          }\n                }\n            }\n            if { $use_auth ==\
+      \ $static::USE_BASIC_AUTH } {\n                if { $recvd_auth == $static::RECVD_AUTH_BASIC\
+      \ } {\n                    # Defer the process until later\n               \
+      \ } else {\n                    HTTP::respond 401 -version 1.1 noserver WWW-Authenticate\
+      \ \"Basic realm=\\\"$http_hdr_host\\\"\" \\\n                              \
+      \  Set-Cookie $static::ACCESS_DEL_COOKIE_HDR_VAL Connection Close\n        \
+      \            return\n                }\n            } elseif { $use_auth ==\
+      \ $static::USE_NTLM_BASIC_AUTH } {\n                if { ($recvd_auth == $static::RECVD_AUTH_NTLM)\
+      \ || ($f_ntlm_auth_succeed == 1) } {\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Enable ECA: $ECA_METADATA_ARG\"\n           \
+      \         ECA::enable\n                    ECA::select $ECA_METADATA_ARG\n \
+      \                   return\n                } elseif { $recvd_auth == $static::RECVD_AUTH_BASIC\
+      \ } {\n                    # Defer the process until later\n               \
+      \ } else {\n                    log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Request Authorization: NTLM + Basic\"\n                    HTTP::respond 401\
+      \ -version 1.1 noserver WWW-Authenticate \"Basic realm=\\\"$http_hdr_host\\\"\
+      \" \\\n                                WWW-Authenticate \"NTLM\" Set-Cookie\
+      \ $static::ACCESS_DEL_COOKIE_HDR_VAL Connection Close\n                    return\n\
+      \                }\n            }\n\n            # Disable NTLM auth\n     \
+      \       log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Disable ECA\"\n            ECA::disable\n            # Disable KCD sso\n \
+      \           set f_disable_sso               1\n\n            if { $MRHSession_cookie\
+      \ != \"\" } {\n                if { [ACCESS::session exists -state_allow -sid\
+      \ $MRHSession_cookie] } {\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX HTTP *VALID* MRHSession cookie: $MRHSession_cookie\"\
+      \n                    # Default profile access setting is false\n          \
+      \          if { $PROFILE_RESTRICT_SINGLE_IP == 0 } {\n                     \
+      \   log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Release\
+      \ the request\"\n                        return\n                    }\n   \
+      \                 elseif { [ IP::addr $src_ip equals [ ACCESS::session data\
+      \ get -sid $MRHSession_cookie \"session.user.clientip\" ] ] } {\n          \
+      \              log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ source IP matched. Release the request\"\n                        return\n\
+      \                    }\n                    else {\n                       \
+      \ log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX source\
+      \ IP does not matched\"\n                    }\n                }\n        \
+      \        else {\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX HTTP *INVALID* MRHSession cookie: $MRHSession_cookie\"\
+      \n                }\n\n                set MRHSession_cookie \"\"\n        \
+      \        HTTP::cookie remove MRHSession\n            }\n\n            set user_key\
+      \                {}\n            if { $PROFILE_RESTRICT_SINGLE_IP == 1 } {\n\
+      \                append user_key                    $src_ip\n            }\n\
+      \            append user_key                 $password\n            binary scan\
+      \ [md5 $user_key ] H* user_key\n            set user_key                   \
+      \ \"$user.$user_key\"\n\n            set apm_cookie_list             [ ACCESS::user\
+      \ getsid $user_key ]\n            if { [ llength $apm_cookie_list ] != 0 } {\n\
+      \                set MRHSession_cookie [ ACCESS::user getkey [ lindex $apm_cookie_list\
+      \ 0 ] ]\n                if { $MRHSession_cookie != \"\" } {\n             \
+      \       HTTP::cookie remove MRHSession \n                    HTTP::cookie insert\
+      \ name MRHSession value $MRHSession_cookie\n                    return\n   \
+      \             }\n            }\n\n            HTTP::cookie remove MRHSession\n\
+      \            HTTP::header insert \"clientless-mode\"       1\n            HTTP::header\
+      \ insert \"username\"              $user\n            HTTP::header insert \"\
+      password\"              $password\n            return\n        }\n    }\n\n\
+      \    when ECA_REQUEST_ALLOWED {\n        set f_ntlm_auth_succeed           \
+      \      1\n\n        if { $MRHSession_cookie == \"\" } {\n            # Retrieve\
+      \ from SID cache\n            set MRHSession_cookie   $sid_cache\n         \
+      \   HTTP::cookie insert name MRHSession value $sid_cache\n        }\n\n    \
+      \    if { $MRHSession_cookie != \"\" } {\n            # Destroy session ID cache.\
+      \ This client should not need session ID cache \n            if { ($sid_cache\
+      \ != \"\") && ($sid_cache != $MRHSession_cookie) } {\n                set sid_cache\
+      \   \"\"\n            }\n            if { [ ACCESS::session exists -state_allow\
+      \ $MRHSession_cookie ] } {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX HTTP *VALID* MRHSession cookie: $MRHSession_cookie\"\
+      \n                # Default profile access setting is false\n              \
+      \  if { $PROFILE_RESTRICT_SINGLE_IP == 0 } {\n                    log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Release the request\"\
+      \n                    return\n                }\n                elseif { [\
+      \ IP::addr $src_ip equals [ ACCESS::session data get -sid $MRHSession_cookie\
+      \ \"session.user.clientip\" ] ] } {\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX source IP matched. Release the request\"\n  \
+      \                  return\n                }\n                else {\n     \
+      \               log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ source IP does not matched\"\n                }\n            } else {\n  \
+      \              log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *INVALID* MRHSession cookie: $MRHSession_cookie\"\n            }\n  \
+      \      }\n\n        set MRHSession  \"\"\n        set sid_cache   \"\"\n   \
+      \     HTTP::cookie remove MRHSession\n\n        # Build user_key\n        set\
+      \    user_key                 {}\n        append user_key                 [string\
+      \ tolower [ECA::username]] \"@\" [ string tolower [ECA::domainname] ]\n    \
+      \    if { $PROFILE_RESTRICT_SINGLE_IP == 0 } {\n            append user_key\
+      \             \":\" $src_ip\n        }\n        append user_key            \
+      \     \":\" [ECA::client_machine_name]\n\n        set apm_cookie_list      \
+      \       [ ACCESS::user getsid $user_key ]\n        if { [ llength $apm_cookie_list\
+      \ ] != 0 } {\n            set MRHSession_cookie [ ACCESS::user getkey [ lindex\
+      \ $apm_cookie_list 0 ] ]\n            if { $MRHSession_cookie != \"\" } {\n\
+      \                set sid_cache           $MRHSession_cookie\n              \
+      \  HTTP::cookie insert name MRHSession value $MRHSession_cookie\n          \
+      \      log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX APM\
+      \ Cookie found: $sid_cache\"\n                return\n            }\n      \
+      \  }\n        unset apm_cookie_list\n\n        set try                     \
+      \    1\n        set start_policy_str            $src_ip\n        append start_policy_str\
+      \         [TCP::client_port]\n\n        while { $try <=  $static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \ } {\n\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ NO APM Cookie found\"\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Trying #$try for $http_method $http_uri $http_content_len\"\
+      \n\n            if { $http_content_len > $static::FIRST_BIG_POST_CONTENT_LEN\
+      \ } {\n                # Wait at below\n            } else {\n             \
+      \   log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX EXEC:\
+      \ table set -notouch -subtable  $static::ACCESS_USERKEY_TBLNAME -excl $user_key\
+      \ $start_policy_str $PROFILE_POLICY_TIMEOUT $PROFILE_MAX_SESS_TIMEOUT\"\n  \
+      \              set policy_status [table set -notouch -subtable  $static::ACCESS_USERKEY_TBLNAME\
+      \ -excl $user_key $start_policy_str $PROFILE_POLICY_TIMEOUT $PROFILE_MAX_SESS_TIMEOUT]\n\
+      \                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ DONE: table set -notouch -subtable  $static::ACCESS_USERKEY_TBLNAME -excl\
+      \ $user_key $start_policy_str $PROFILE_POLICY_TIMEOUT $PROFILE_MAX_SESS_TIMEOUT\"\
+      \n                if { $policy_status == $start_policy_str } {\n           \
+      \         # ACCESS Policy has not started. Start one\n                    HTTP::header\
+      \ insert \"clientless-mode\"    1\n                    break\n             \
+      \   } elseif { $policy_status == $static::POLICY_SUCCEED } {\n             \
+      \       log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ table is out-of-sync retry\"\n                    table delete -subtable \
+      \ $static::ACCESS_USERKEY_TBLNAME $user_key\n                    continue\n\
+      \                } elseif { $policy_status == $static::POLICY_FAILED } {\n \
+      \                   ACCESS::disable\n                    TCP::close\n      \
+      \              return\n                }\n                # Wait at below\n\
+      \            }\n\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Waiting  $static::POLICY_RESULT_POLL_INTERVAL ms for $http_method $http_uri\"\
+      \n            # Touch the entry table\n            table lookup -subtable  $static::ACCESS_USERKEY_TBLNAME\
+      \ $user_key\n            after  $static::POLICY_RESULT_POLL_INTERVAL\n\n   \
+      \         set apm_cookie_list             [ ACCESS::user getsid $user_key ]\n\
+      \            if { [ llength $apm_cookie_list ] != 0 } {\n                set\
+      \ MRHSession_cookie [ ACCESS::user getkey [ lindex $apm_cookie_list 0 ] ]\n\
+      \                if { $MRHSession_cookie != \"\" } {\n                    set\
+      \ sid_cache           $MRHSession_cookie\n                    HTTP::cookie insert\
+      \ name MRHSession value $MRHSession_cookie\n                    log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX APM Cookie found:\
+      \ $sid_cache\"\n                    return\n                }\n            }\n\
+      \n            incr try\n        }\n\n        if { $try >  $static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \ } {\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Policy did not finish in [ expr { $static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \ * $static::POLICY_RESULT_POLL_INTERVAL } ] ms. Close connection for $http_method\
+      \ $http_uri\"\n            table delete -subtable  $static::ACCESS_USERKEY_TBLNAME\
+      \ $user_key\n            ACCESS::disable\n            TCP::close\n         \
+      \   return\n        }\n\n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Releasing request $http_method $http_uri\"\n\n        unset try\n        unset\
+      \ start_policy_str\n    }\n\n    when ECA_REQUEST_DENIED {\n        set f_ntlm_auth_succeed\
+      \                 0\n    }\n\n    when HTTP_RESPONSE_RELEASE {\n        if {\
+      \ ! [info exists user_key] } {\n            return\n        }\n        log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX HTTP response: status:\
+      \           [HTTP::status]\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX HTTP response: Server:           [HTTP::header\
+      \ Server]\"\n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP response: Content-Length:   [HTTP::header Content-Length]\"\n       \
+      \ log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX HTTP response:\
+      \ WWW-Authenticate: [HTTP::header WWW-Authenticate]\"\n    }\n\n    when ACCESS_SESSION_STARTED\
+      \ {\n        if { [ info exists user_key ] } {\n            ACCESS::session\
+      \ data set \"session.user.uuid\" $user_key\n            ACCESS::session data\
+      \ set \"session.user.microsoft-exchange-client\" 1\n        }\n    }\n\n   \
+      \ when ACCESS_ACL_ALLOWED {\n        if { [ info exists f_disable_sso ] && $f_disable_sso\
+      \ == 1 } {\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Disable WEBSSO\"\n            WEBSSO::disable\n        }\n    }\n\n    when\
+      \ ACCESS_POLICY_COMPLETED {\n        if { ! [ info exists user_key ] } {\n \
+      \           return\n        }\n\n        set user_key_value \"\"\n        set\
+      \ f_delete_session 0\n        set policy_result [ACCESS::policy result]\n  \
+      \      set sid [ ACCESS::session sid ]\n\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX ACCESS_POLICY_COMPLETED: policy_result = \\\"\
+      $policy_result\\\" user_key = \\\"$user_key\\\" sid = \\\"$sid\\\"\"\n\n   \
+      \     switch $policy_result {\n        \"allow\" {\n            set user_key_value\
+      \          $sid\n            set sid_cache               $user_key_value\n \
+      \           log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Result: Allow: $user_key\"\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX sid = $sid\"\n\n        }\n        \"deny\" {\n\
+      \            ACCESS::respond 401 content  $static::actsync_401_http_body Set-Cookie\
+      \ $static::ACCESS_DEL_COOKIE_HDR_VAL Connection Close\n            set f_delete_session\
+      \  1\n        }\n        default {\n            ACCESS::respond 503 content\
+      \  $static::actsync_503_http_body Connection Close\n            log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Got unsupported policy\
+      \ result for $user_key ($sid)\"\n            set f_delete_session  1\n     \
+      \   }\n        }\n\n        if { $f_ntlm_auth_succeed == 1 } {\n           \
+      \ if { $user_key_value != \"\" } {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Setting $user_key => $static::POLICY_SUCCEED\"\
+      \n                table set -subtable  $static::ACCESS_USERKEY_TBLNAME $user_key\
+      \ $static::POLICY_SUCCEED\n            } else {\n                log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Setting $user_key\
+      \ => $static::POLICY_FAILED  $static::POLICY_DONE_WAIT_SEC $static::POLICY_DONE_WAIT_SEC_in\
+      \ table $static::ACCESS_USERKEY_TBLNAME\"\n                table set -subtable\
+      \  $static::ACCESS_USERKEY_TBLNAME $user_key $static::POLICY_FAILED  $static::POLICY_DONE_WAIT_SEC\
+      \ $static::POLICY_DONE_WAIT_SEC\n            }\n        }\n\n        if { $f_delete_session\
+      \ == 1 } {\n            ACCESS::session remove\n            set f_delete_session\
+      \ 0\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Removing the session for $user_key.\"\n        }\n    }\ndefinition-signature\
+      \ d/SlmwsO4YeDlh3eJpLqam9ytq0/EkWnAce1XTQ5bxOyla0x/VHjkr9dvoo3awaxp7lEjAenIgwGpS2jL5R1hq48WGZN2nu9LDKVjTosrq7j1MHbeKiIW8yXc3IEUtbbkhkAGNnMmfDYMD8Vg7l+iBx6B/WvRTZLr+tmppFf0BIr2Z7FWWU6c9OVl8YH1VuqqFX/lKICn2EXDhebRDRVvuXobLvbjZQxj+tqdUU2vuLzXYot/RUgClXHrg6Z2ZC6/WuAq4pp/XA2kvzWotQiY9gEceQdMC7/BxPSR8xo4VPNqkFkEPjh5hehZP0tFONTZaMaH1klVg4QbvHH5MRiBQ==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_APM_ExchangeSupport_helper: {definition: "    # The purpose of this\
+      \ iRule is for help the main virtual for the timing of the HTTP request retry\n\
+      \    # during the SSO process for OutlookAnywhere protocol request which has\
+      \ a Content-Length value of 1GB.\n\n    when HTTP_REQUEST {\n        #  Waiting\
+      \ for the first chunk of data.\n        HTTP::collect 1\n    }\n\n    when HTTP_REQUEST_DATA\
+      \ {\n        # Respond 401 and close the connection once we received the data.\n\
+      \        HTTP::respond 401 WWW-Authenticate NTLM Connection close\n    }\ndefinition-signature\
+      \ fnJWcC75FIDV4savxGjyZ5sTdRTen+3mItejhseH06qn+qBXjOl/j7wYRSLDv1IcFezF8BunbDftMHXrW7QRuPuxhjMIc4vaALE2CCGkO0xcs258F+nkPeeJKoR5mTHY/E5BWpOAISinUBUSA3/nUm8blXkMwVg/Q95360jcCOoi6csgJa97OSKIF9h9OQCylh1qGBsDRHEXCR3ycw5Eb4T2QQSdBn09vr8Hgdpi/9fUER97nzJe8T/RuoG+nQ7bc8F9yzG6nFa/CQtRYDybDrcNgllCfVloXZAHZS3dCpq6FnS/FaEWfSIujmV+lXkxY23Xz9Wf6i1h/feW9fEUiQ==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_APM_ExchangeSupport_main: {definition: "    # Global variables\n  \
+      \  # static::POLICY_RESULT_CACHE_AUTHFAILED\n    #     Administrator can set\
+      \ this into 1, when there is a necessity to cache failed policy result.\n  \
+      \  #     This may be needed to avoid account locked caused by the Active Sync\
+      \ device when it uses wrong passwords.\n    #     One possible scenario, is\
+      \ that when the user changes the password in Active Directory, but missed to\
+      \ changed in their devices.\n    # Responses\n    # On denied result\n    #\
+      \     Administrator can customize the responses to the device depends on more\
+      \ complex conditions when necessary.\n    #     In those cases, please use ACCESS::respond\
+      \ command.\n    #     The following is the syntax of ACCESS::respond\n    #\
+      \     ACCESS::respond <status code> [ content <body> ] [ <Additional Header>\
+      \ <Additional Header value>* ]\n    #     e.g. ACCESS::respond 401 content \"\
+      Error: Denied\" WWW-Authenticate \"basic realm=\\\"f5.com\\\"\" Connection close\n\
+      \    when RULE_INIT {\n        # Please set the following global variables for\
+      \ customized responses.\n        set static::actsync_401_http_body \"<html><title>Authentication\
+      \ Failured</title><body>Error: Authentication Failure</body></html>\"\n    \
+      \    set static::actsync_503_http_body \"<html><title>Service is not available</title><body>Error:\
+      \ Service is not available</body></html>\"\n        set static::ACCESS_LOG_PREFIX\
+      \                 \"01490000:7:\"\n\n        # Second Virtual Server name for\
+      \ 401 NTLM responder\n        set static::ACCESS_SECOND_VIRTUAL_NAME       \
+      \ \"_ACCESS_401_NTLM_responder_HTTPS\"\n\n        set static::POLICY_INPROGRESS\
+      \                 \"policy_inprogress\"\n        set static::POLICY_AUTHFAILED\
+      \                 \"policy_authfailed\"\n        # The request with huge content\
+      \ length can not be used for starting ACCESS session.\n        # This kind of\
+      \ request will be put on hold, and this iRule will try to use another\n    \
+      \    # request to start the session. The following value is used for Outlook\
+      \ Anywhere.\n        set static::OA_MAGIC_CONTENT_LEN              1073741824\n\
+      \n        # Similar with OutlookAnywhere case, ACCESS can not use the request\
+      \ which is\n        # larger then following size. This becomes an issue with\
+      \ application that using\n        # Exchange Web Service as its main protocol\
+      \ such as Mac OS X applications\n        # (e.g. Mail app, Microsoft Entourage,\
+      \ etc)\n        # This kind of request will be put on hold, and this iRule will\
+      \ try to use another\n        # request to start the session.\n        set static::FIRST_BIG_POST_CONTENT_LEN\
+      \        640000\n\n        # Set it into 1 if the backend EWS handler accepts\
+      \ HTTP Basic Authentication.\n        set static::EWS_BKEND_BASIC_AUTH     \
+      \         0\n        # Set it into 1 if the backend RPC-over-HTTP handler accepts\
+      \ HTTP Basic Authentication.\n        set static::RPC_OVER_HTTP_BKEND_BASIC_AUTH\
+      \    0\n        # The following variable controls the polling mechanism.\n \
+      \       set static::POLICY_RESULT_POLL_INTERVAL       250\n        set static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \  600\n\n        # Set this global variable to 1 for caching authentication\
+      \ failure\n        # Useful for avoiding account locked out.\n        set static::POLICY_RESULT_CACHE_AUTHFAILED\
+      \    0\n\n        # set this global variable to set alternative timeout for\
+      \ particular session\n        set static::POLICY_ALT_INACTIVITY_TIMEOUT    \
+      \ 120\n\n        set static::ACCESS_USERKEY_TBLNAME            \"_access_userkey\"\
+      \n\n\n        set static::ACCESS_DEL_COOKIE_HDR_VAL         \"MRHSession=deleted;\
+      \ expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/\"\n\n        log -noname accesscontrol.local1.debug\
+      \ \"01490000:7: RPC_OVER_HTTP_BKEND_BASIC_AUTH = $static::RPC_OVER_HTTP_BKEND_BASIC_AUTH\"\
+      \n        log -noname accesscontrol.local1.debug \"01490000:7: EWS_BKEND_BASIC_AUTH\
+      \ = $static::EWS_BKEND_BASIC_AUTH\"\n    }\n    when ACCESS_ACL_ALLOWED {\n\
+      \        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ [HTTP::method] [HTTP::uri] [HTTP::header Content-Length]\"\n\n        if {\
+      \ [ info exists f_rpc_over_http ] && $f_rpc_over_http == 1 }  {\n          \
+      \  if { $static::RPC_OVER_HTTP_BKEND_BASIC_AUTH == 0 } {\n                if\
+      \ { [ info exists f_oa_magic_content_len ] && $f_oa_magic_content_len == 1 }\
+      \ {\n                    log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Use this virtual $static::ACCESS_SECOND_VIRTUAL_NAME just once. Will be reset\
+      \ back after disconnection.\"\n                    use virtual $static::ACCESS_SECOND_VIRTUAL_NAME\n\
+      \                }\n               log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX Remove HTTP Auth header\"\n               HTTP::header\
+      \ remove Authorization\n            }\n        }\n        # MSFT Exchange's\
+      \ EWS request handler always requesting NTLM even the connection has been\n\
+      \        # already authenticated if there is a HTTP Basic Auth in the request.\n\
+      \        if { [ info exists f_exchange_web_service ] && $f_exchange_web_service\
+      \  == 1 }  {\n            if { $static::EWS_BKEND_BASIC_AUTH == 0 } {\n    \
+      \            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Removing HTTP Basic Authorization header\"\n                HTTP::header remove\
+      \ Authorization\n            }\n        }\n    }\n\n    when HTTP_REQUEST {\n\
+      \        set http_path                       [ string tolower [HTTP::path] ]\n\
+      \        set f_clientless_mode               0\n        set f_alt_inactivity_timeout\
+      \        0\n        set f_rpc_over_http                 0\n        set f_exchange_web_service\
+      \          0\n        set f_auto_discover                 0\n        set f_activesync\
+      \                    0\n        set f_offline_address_book          0\n    \
+      \    set f_availability_service          0\n\n        #  Here put appropriate\
+      \ pool when necessary.\n        switch -glob $http_path {\n        \"/rpc/rpcproxy.dll\"\
+      \ {\n            # Supports for RPC over HTTP. (Outlook Anywhere)\n        \
+      \    set f_rpc_over_http 1\n        }\n        \"/autodiscover/autodiscover.xml\"\
+      \ {\n            # Supports for Auto Discover protocol.\n            set f_auto_discover\
+      \ 1\n            # This request does not require long inactivity timeout.\n\
+      \            # Don't use this for now\n            set f_alt_inactivity_timeout\
+      \ 0\n        }\n        \"/microsoft-server-activesync\" {\n            # Supports\
+      \ for ActiveSync\n            set f_activesync 1\n        }\n        \"/oab/*\"\
+      \ {\n            # Supports for Offline Address Book\n            set f_offline_address_book\
+      \ 1\n        }\n        \"/ews/*\" {\n            # Support for Exchange Web\
+      \ Service\n            # Outlook's Availability Service borrows this protocol.\n\
+      \            set f_exchange_web_service 1\n        }\n        \"/as/*\" {\n\
+      \            # Support for Availability Service.\n            # do nothing for\
+      \ now. (Untested)\n            set f_availability_service 1\n        }\n   \
+      \     default {\n            return\n        }\n        }\n\n        set f_reqside_set_sess_id\
+      \           0\n        set http_method                     [HTTP::method]\n\
+      \        set http_hdr_host                   [HTTP::host]\n        set http_hdr_uagent\
+      \                 [HTTP::header User-Agent]\n        set src_ip            \
+      \              [IP::remote_addr]\n        set http_uri                     \
+      \   [HTTP::uri]\n        set http_content_len                [HTTP::header Content-Length]\n\
+      \        set MRHSession_cookie               [HTTP::cookie value MRHSession]\n\
+      \        set auth_info_b64enc                \"\"\n\n        if { ! [ info exists\
+      \ PROFILE_POLICY_TIMEOUT ] } {\n            set PROFILE_POLICY_TIMEOUT     \
+      \       [PROFILE::access access_policy_timeout]\n        }\n        if { ! [\
+      \ info exists PROFILE_MAX_SESS_TIMEOUT ] } {\n            set PROFILE_MAX_SESS_TIMEOUT\
+      \          [PROFILE::access max_session_timeout]\n        }\n        if { !\
+      \ [ info exists PROFILE_RESTRICT_SINGLE_IP ] } {\n            set PROFILE_RESTRICT_SINGLE_IP\
+      \        1\n        }\n\n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ method: $http_method\"\n        log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX Src IP: $src_ip\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX User-Agent: $http_hdr_uagent\"\n        log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX HTTP uri: $http_uri\"\
+      \n        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP len: $http_content_len\"\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Restrict-to-single-client-ip: $PROFILE_RESTRICT_SINGLE_IP\"\
+      \n\n        # First, do we have valid MRHSession cookie.\n        if { $MRHSession_cookie\
+      \ != \"\" } {\n            if { [ACCESS::session exists -state_allow -sid $MRHSession_cookie]\
+      \ } {\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *VALID* MRHSession cookie: $MRHSession_cookie\"\n            } else {\n\
+      \                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *INVALID* MRHSession cookie: $MRHSession_cookie\"\n                set\
+      \ MRHSession_cookie \"\"\n                HTTP::cookie remove MRHSession\n \
+      \           }\n        }\n\n        set http_hdr_auth [HTTP::header Authorization]\n\
+      \        if { [ string match -nocase {basic *} $http_hdr_auth ] != 1 } {\n \
+      \           log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Not basic authentication. Ignore received auth header\"\n            set http_hdr_auth\
+      \ \"\"\n        }\n\n        if { $http_hdr_auth == \"\" } {\n            log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX No/Empty Auth\
+      \ header\"\n            # clean up the cookie\n            if { $MRHSession_cookie\
+      \ == \"\" } {\n                HTTP::respond 401 content  $static::actsync_401_http_body\
+      \ WWW-Authenticate \"Basic realm=\\\"[HTTP::header Host]\\\"\" Set-Cookie $static::ACCESS_DEL_COOKIE_HDR_VAL\
+      \ Connection close\n                return\n            }\n            # Do\
+      \ nothing if we have a valid MRHSession cookie.\n        }\n\n        set f_release_request\
+      \           0\n        # Optimization for clients which support cookie\n   \
+      \     if { $MRHSession_cookie != \"\" } {\n            # Default profile access\
+      \ setting is false\n            if { $PROFILE_RESTRICT_SINGLE_IP == 0 } {\n\
+      \                set f_release_request 1\n            }\n            elseif\
+      \ { [ IP::addr $src_ip equals [ ACCESS::session data get -sid $MRHSession_cookie\
+      \ \"session.user.clientip\" ] ] } {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX source IP matched\"\n                set f_release_request\
+      \ 1\n            }\n            else {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX source IP does not matched\"\n              \
+      \  set MRHSession_cookie \"\"\n                HTTP::cookie remove MRHSession\n\
+      \            }\n        }\n\n        if { $f_release_request == 0 } {\n    \
+      \        set apm_username [ string tolower [HTTP::username]]\n            set\
+      \ apm_password [HTTP::password]\n            if { $PROFILE_RESTRICT_SINGLE_IP\
+      \ == 0 } {\n                binary scan [md5 \"$apm_password\"] H* user_hash\n\
+      \            } else {\n                binary scan [md5 \"$apm_password$src_ip\"\
+      ] H* user_hash\n            }\n\n            set user_key    {}\n          \
+      \  append user_key $apm_username \".\" $user_hash\n            unset user_hash\n\
+      \n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP Hdr Auth: $http_hdr_auth\"\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX apm_username: $apm_username\"\n            log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX user_key =\
+      \ $user_key\"\n            set apm_cookie_list             [ ACCESS::user getsid\
+      \ $user_key ]\n            if { [ llength $apm_cookie_list ] != 0 } {\n    \
+      \            set apm_cookie [ ACCESS::user getkey [ lindex $apm_cookie_list\
+      \ 0 ] ]\n                if { $apm_cookie != \"\" } {\n                    HTTP::cookie\
+      \ insert name MRHSession value $apm_cookie\n                    set f_release_request\
+      \ 1\n                }\n            }\n        }\n\n        if { $http_content_len\
+      \ ==  $static::OA_MAGIC_CONTENT_LEN } {\n            set f_oa_magic_content_len\
+      \ 1\n        }\n\n        set f_sleep_here 0\n        set retry 1\n\n      \
+      \  while { $f_release_request == 0 && $retry <=  $static::POLICY_RESULT_POLL_MAXRETRYCYCLE\
+      \ } {\n\n            log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Trying #$retry for $http_method $http_uri $http_content_len\"\n\n        \
+      \    # This is also going to touch the table entry timer.\n            log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Reading $user_key\
+      \ from table $static::ACCESS_USERKEY_TBLNAME\"\n\n            set apm_cookie\
+      \ [table lookup -subtable  $static::ACCESS_USERKEY_TBLNAME -notouch $user_key]\n\
+      \            if { $apm_cookie != \"\" } {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Verifying table cookie = $apm_cookie\"\n\n  \
+      \              # Accessing SessionDB is not that cheap. Here we are trying to\
+      \ check known value.\n                if { $apm_cookie == \"policy_authfailed\"\
+      \ || $apm_cookie == \"policy_inprogress\"} {\n                    # Do nothing\n\
+      \                } elseif  { ! [ ACCESS::session exists $apm_cookie ] } {\n\
+      \                    log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ table cookie = $apm_cookie is out-of-sync\"\n                    # Table value\
+      \ is out of sync. Ignores it.\n                    set apm_cookie \"\"\n   \
+      \             }\n            }\n\n            switch $apm_cookie {\n       \
+      \     \"\" {\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ NO APM Cookie found\"\n\n                if { [ info exists f_oa_magic_content_len\
+      \ ] && $f_oa_magic_content_len == 1 } {\n                    # Outlook Anywhere\
+      \ request comes in pair. The one with 1G payload is not usable\n           \
+      \         # for creating new session since 1G content-length is intended for\
+      \ client to upload\n                    # the data when needed.\n          \
+      \          log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Start to wait $static::POLICY_RESULT_POLL_INTERVAL ms for request with magic\
+      \ content-len\"\n                    set f_sleep_here 1\n                } elseif\
+      \ { [ info exists f_exchange_web_service ] && $f_exchange_web_service == 1 &&\
+      \ $http_content_len > $static::FIRST_BIG_POST_CONTENT_LEN } {\n            \
+      \        # Here we are getting large EWS request, which can't be used for starting\
+      \ new session\n                    # in clientless-mode. Have it here waiting\
+      \ for next smaller one.\n                    # We are holding the request here\
+      \ in HTTP filter, and HTTP filter automatically\n                    # clamping\
+      \ down the TCP window when necessary.\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Start to wait $static::POLICY_RESULT_POLL_INTERVAL\
+      \ ms for big EWS request\"\n                    set f_sleep_here 1\n       \
+      \         } else {\n                   set apm_cookie               \"policy_inprogress\"\
+      \n                   set f_reqside_set_sess_id    1\n                   set\
+      \ f_release_request        1\n                }\n            }\n           \
+      \ \"policy_authfailed\" {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Found $user_key with AUTH_FAILED\"\n        \
+      \        HTTP::respond 401 content  $static::actsync_401_http_body\n       \
+      \         set f_release_request 1\n            }\n            \"policy_inprogress\"\
+      \ {\n                if { [ info exists f_activesync ] && ($f_activesync ==\
+      \ 1) } {\n                    # For ActiveSync requests, aggressively starts\
+      \ new session.\n                    set f_reqside_set_sess_id    1\n       \
+      \             set f_release_request        1\n                } else {\n   \
+      \                 set f_sleep_here 1\n                }\n            }\n   \
+      \         default {\n                log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Using MRHSession = $apm_cookie\"\n          \
+      \      HTTP::header insert Cookie \"MRHSession=$apm_cookie\"\n             \
+      \   set f_release_request 1\n            }\n            }\n\n            if\
+      \ { $f_reqside_set_sess_id == 1 } {\n                set f_reqside_set_sess_id\
+      \ 0\n                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Setting $user_key=$apm_cookie $PROFILE_POLICY_TIMEOUT $PROFILE_MAX_SESS_TIMEOUT\"\
+      \n                set f_clientless_mode 1\n                HTTP::cookie remove\
+      \ MRHSession\n                HTTP::header insert \"clientless-mode\" 1\n  \
+      \              HTTP::header insert \"username\" $apm_username\n            \
+      \    HTTP::header insert \"password\" $apm_password\n                table set\
+      \ -subtable  $static::ACCESS_USERKEY_TBLNAME $user_key $apm_cookie $PROFILE_POLICY_TIMEOUT\
+      \ $PROFILE_MAX_SESS_TIMEOUT\n            }\n\n            if { $f_sleep_here\
+      \ == 1 } {\n                set f_sleep_here 0\n                log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Waiting  $static::POLICY_RESULT_POLL_INTERVAL\
+      \ ms for $http_method $http_uri\"\n                after  $static::POLICY_RESULT_POLL_INTERVAL\n\
+      \            }\n\n            incr retry\n        }\n\n        if { $f_release_request\
+      \ == 0 && $retry >=  $static::POLICY_RESULT_POLL_MAXRETRYCYCLE } {\n       \
+      \     log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Policy\
+      \ did not finish in [expr { $static::POLICY_RESULT_POLL_MAXRETRYCYCLE * $static::POLICY_RESULT_POLL_INTERVAL\
+      \ } ] ms. Close connection for $http_method $http_uri\"\n\n            table\
+      \ delete -subtable  $static::ACCESS_USERKEY_TBLNAME $user_key\n            ACCESS::disable\n\
+      \            TCP::close\n            return\n        }\n\n        log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Releasing request\
+      \ $http_method $http_uri\"\n    }\n\n    when ACCESS_SESSION_STARTED {\n   \
+      \     if { [ info exists user_key ] } {\n            ACCESS::session data set\
+      \ \"session.user.uuid\" $user_key\n            ACCESS::session data set \"session.user.microsoft-exchange-client\"\
+      \ 1\n\n            if { [ info exists f_activesync ] && $f_activesync == 1 }\
+      \ {\n                ACCESS::session data set \"session.user.microsoft-activesync\"\
+      \ 1\n            }\n            elseif { [ info exists f_auto_discover ] &&\
+      \ $f_auto_discover == 1 } {\n                ACCESS::session data set \"session.user.microsoft-autodiscover\"\
+      \ 1\n            }\n            elseif { [ info exists f_availability_service\
+      \ ] && $f_availability_service == 1 } {\n                ACCESS::session data\
+      \ set \"session.user.microsoft-availabilityservice\" 1\n            }\n    \
+      \        elseif { [ info exists f_rpc_over_http ] && $f_rpc_over_http == 1 }\
+      \ {\n                ACCESS::session data set \"session.user.microsoft-rpcoverhttp\"\
+      \ 1\n            }\n            elseif { [ info exists f_offline_address_book\
+      \ ] && $f_offline_address_book == 1 } {\n                ACCESS::session data\
+      \ set \"session.user.microsoft-offlineaddressbook\" 1\n            }\n     \
+      \       elseif { [ info exists f_exchange_web_service ] && $f_exchange_web_service\
+      \ == 1 } {\n                ACCESS::session data set \"session.user.microsoft-exchangewebservice\"\
+      \ 1\n            }\n        }\n        if { [ info exists f_alt_inactivity_timeout\
+      \ ] && $f_alt_inactivity_timeout == 1 } {\n            ACCESS::session data\
+      \ set \"session.inactivity_timeout\"  $static::POLICY_ALT_INACTIVITY_TIMEOUT\n\
+      \        }\n    }\n\n    when HTTP_RESPONSE {\n        if { [ info exists f_auto_discover\
+      \ ] && $f_auto_discover == 1 } {\n            set content_len [ HTTP::header\
+      \ Content-Length ]\n            if {  $content_len > 0 } {\n               \
+      \ HTTP::collect $content_len\n            }\n        }\n    }\n    when HTTP_RESPONSE_DATA\
+      \ {\n        if { [ info exists f_auto_discover ] && $f_auto_discover == 1 }\
+      \ {\n            if { [ regsub -line {<AuthPackage>Ntlm</AuthPackage>} [ HTTP::payload\
+      \ ] {<AuthPackage>Basic</AuthPackage>} payload ] != 0 } {\n                HTTP::payload\
+      \ replace 0 $content_len $payload\n            }\n        }\n    }\n    when\
+      \ ACCESS_POLICY_COMPLETED {\n        if { ! [ info exists user_key ] } {\n \
+      \           return\n        }\n\n        set user_key_value \"\"\n        set\
+      \ f_delete_session 0\n        set policy_result [ACCESS::policy result]\n  \
+      \      set sid [ ACCESS::session sid ]\n\n        log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX ACCESS_POLICY_COMPLETED: policy_result = \\\"\
+      $policy_result\\\" user_key = \\\"$user_key\\\" sid = \\\"$sid\\\"\"\n\n   \
+      \     set inactivity_timeout [ACCESS::session data get \"session.inactivity_timeout\"\
+      ]\n        set max_sess_timeout [ACCESS::session data get \"session.max_session_timeout\"\
+      ]\n        if { $max_sess_timeout == \"\" } {\n             set max_sess_timeout\
+      \ $PROFILE_MAX_SESS_TIMEOUT\n        }\n\n        switch $policy_result {\n\
+      \        \"allow\" {\n            # We depends on this table record self-cleanup\
+      \ capability in order to\n            # indirectly sync with session DB.\n \
+      \           set user_key_value $sid\n\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Result: Allow: $user_key => $sid $inactivity_timeout\
+      \ $max_sess_timeout\"\n            log -noname accesscontrol.local1.debug \"\
+      $static::ACCESS_LOG_PREFIX user_key_value = $user_key_value\"\n            log\
+      \ -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX sid = $sid\"\
+      \n        }\n        \"deny\" {\n            # When necessary the ******** here\
+      \ can check appropriate session variable\n            # and decide what response\
+      \ more appropriate then this default response.\n            ACCESS::respond\
+      \ 401 content  $static::actsync_401_http_body Set-Cookie $static::ACCESS_DEL_COOKIE_HDR_VAL\
+      \ Connection close\n            if {  $static::POLICY_RESULT_CACHE_AUTHFAILED\
+      \ == 1 } {\n                set user_key_value  $static::POLICY_AUTHFAILED\n\
+      \            } else {\n                set f_delete_session  1\n           \
+      \ }\n        }\n        default {\n            ACCESS::respond 503 content \
+      \ $static::actsync_503_http_body Connection close\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Got unsupported policy result for $user_key ($sid)\"\
+      \n            set f_delete_session  1\n        }\n        }\n        if { $user_key_value\
+      \ != \"\" } {\n           log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ Setting $user_key => $user_key_value $inactivity_timeout $max_sess_timeout\
+      \ in table $static::ACCESS_USERKEY_TBLNAME\"\n\n           table set -subtable\
+      \  $static::ACCESS_USERKEY_TBLNAME $user_key $user_key_value $inactivity_timeout\
+      \ $max_sess_timeout\n        } else {\n           log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Deleting $user_key in table $static::ACCESS_USERKEY_TBLNAME\"\
+      \n\n           table delete -subtable  $static::ACCESS_USERKEY_TBLNAME $user_key\n\
+      \        }\n\n        if { $f_delete_session == 1 } {\n           ACCESS::session\
+      \ remove\n           set f_delete_session 0\n           log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX Removing the session for $user_key.\"\n     \
+      \   }\n    }\ndefinition-signature feX9LM+vB6YOEdVF+EA1JtNyVkPaB7gwdW0JzaB083MXl4yPP2nZnjm+WAx3YQhsmLttq5UkPl1zHpr5H9cwJX1bu9BNMi/+n0bIqWOipDHhhSYQ+TH+a5jQUSeftISr52BSQxh0cQKZkzM3rFU/qRZn9D9Dbf0kDGiDC1KWwVosrdjp5tVHOiQXWx8zybbGPFfgBcIBE6IvOvGbh5ohebVL2ADZm0URRj2NM4ZvZ2T3C14k2rHGXnDdRsvhmf5USZ+FH1hoKtWRxqtFjkWIaqw8leenXeot1j2bdKy92/AVTC9oZj1HJN1ePuQo5v414zlUhMEtkVy/gaxvj1+vPQ==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_APM_Office365_SAML_BasicAuth: {definition: "when RULE_INIT {\n    \
+      \    set static::ACCESS_LOG_ECP_PREFIX       \"014d0002:7: ECP client\"\n  \
+      \  }\n    when HTTP_REQUEST {\n        set http_path            [string tolower\
+      \ [HTTP::path]]\n        set http_hdr_auth        [HTTP::header Authorization]\n\
+      \        set http_hdr_client_app  [HTTP::header X-MS-Client-Application]\n \
+      \       set http_hdr_client_ip   [HTTP::header X-MS-Forwarded-Client-IP]\n \
+      \       set MRHSession_cookie    [HTTP::cookie value MRHSession]\n\n       \
+      \ if { ($http_path == \"/saml/idp/profile/redirectorpost/sso\") &&\n       \
+      \      ($http_hdr_client_app != \"\") &&\n             ($http_hdr_client_app\
+      \ contains \"Microsoft.Exchange\") } {\n            HTTP::uri \"/saml/idp/profile/ecp/sso\"\
+      \n        } elseif { ($http_path != \"/saml/idp/profile/ecp/sso\")  } {\n  \
+      \          return\n        }\n        set f_saml_ecp_request 1\n        unset\
+      \ http_path\n\n        # If MRHSession cookie from client is present, skip further\
+      \ processing.\n        if { $MRHSession_cookie != \"\" } {\n            if {\
+      \ [ACCESS::session exists -state_allow -sid $MRHSession_cookie] } {\n      \
+      \          log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_ECP_PREFIX\
+      \ HTTP *VALID* MRHSession cookie: $MRHSession_cookie\"\n            } else {\n\
+      \                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_ECP_PREFIX\
+      \ HTTP *INVALID* MRHSession cookie: $MRHSession_cookie\"\n            }\n  \
+      \          return\n        }\n\n        if { ($http_hdr_client_app != \"\")\
+      \ &&\n            ($http_hdr_client_app contains \"Microsoft.Exchange\") &&\n\
+      \            ($http_hdr_client_ip != \"\") } {\n\t    set src_ip $http_hdr_client_ip\n\
+      \t}\n        unset http_hdr_client_app\n        unset http_hdr_client_ip\n\n\
+      \        if { ! [ info exists src_ip ] } {\n            set src_ip         \
+      \ [IP::remote_addr]\n        }\n\n        # Only allow HTTP Basic Authentication.\n\
+      \        if { ($http_hdr_auth == \"\") || ([ string match -nocase {basic *}\
+      \ $http_hdr_auth ] != 1 ) } {\n            log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_ECP_PREFIX ECP request does not contain HTTP Basic Authorization\
+      \ header.\"\n            unset http_hdr_auth\n            return\n        }\n\
+      \n        set apm_username        [ string tolower [HTTP::username] ]\n    \
+      \    set apm_password        [HTTP::password]\n\n        binary scan [md5 \"\
+      $apm_password$src_ip\"] H* user_hash\n        set user_key {}\n        append\
+      \ user_key $apm_username \".\" $user_hash\n        unset user_hash\n\n     \
+      \   set apm_cookie_list             [ ACCESS::user getsid $user_key ]\n    \
+      \    if { [ llength $apm_cookie_list ] != 0 } {\n            set apm_cookie\
+      \ [ ACCESS::user getkey [ lindex $apm_cookie_list 0 ] ]\n            if { $apm_cookie\
+      \ != \"\" } {\n                HTTP::cookie insert name MRHSession value $apm_cookie\n\
+      \            }\n        }\n\n        HTTP::header insert \"clientless-mode\"\
+      \ 1\n        HTTP::header insert \"username\" $apm_username\n        HTTP::header\
+      \ insert \"password\" $apm_password\n        unset apm_username\n        unset\
+      \ apm_password\n        unset http_hdr_auth\n    }\n\n    when ACCESS_SESSION_STARTED\
+      \ {\n        if { [ info exists f_saml_ecp_request ] && $f_saml_ecp_request\
+      \ == 1 } {\n            if { [ info exists user_key ] } {\n                ACCESS::session\
+      \ data set \"session.user.uuid\" $user_key\n            }\n            if {\
+      \ [ info exists  src_ip ] } {\n                ACCESS::session data set \"session.user.clientip\"\
+      \ $src_ip\n            }\n        }\n    }\n\n    when HTTP_RESPONSE {\n   \
+      \     if { [ info exists f_saml_ecp_request ] && $f_saml_ecp_request == 1 }\
+      \ {\n            unset f_saml_ecp_request\n            unset apm_cookie\n  \
+      \      }\n    }\ndefinition-signature hbkbqtFWuaW9oegh6SzMveAg8WY7+tJBg32EgZs3djEixBoxjXoktrb/mcfl3FmsQXRgE6LgrZCeIvjqLdk/8/wq/4wnd4naYm2VALVoBPeETuCpWdmiyiwuvFC5G4VlYhqhYhRsx9mQhbRWm8/YvoBpvNnCCSdyx/wL+KcYQGU7Zv4woZrtruq4RiLCm6ohutAWdS2NbeIQHG37NFXT6wV6pR9EIqrkNetbXAdi6OZGuuthSXMSXMz64+CwkzpptxP3bhOsFvM/gq8FfWR8rsRJfxaHg+njkkgKSkH3TL7vhDnL3pXcHhH1/9P6qDU++YAyiXzppOlLHib33Rv0yw==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_APM_activesync: {definition: "when RULE_INIT {\n        set static::actsync_401_http_body\
+      \   \"<html><title>Authentication Failed</title><body>Error: Authentication\
+      \ Failure</body></html>\"\n        set static::actsync_503_http_body   \"<html><title>Service\
+      \ is not available</title><body>Error: Service is not available</body></html>\"\
+      \n        set static::ACCESS_LOG_PREFIX       \"01490000:7:\"\n    }\n    when\
+      \ HTTP_REQUEST {\n        set http_path                       [string tolower\
+      \ [HTTP::path]]\n        set f_clientless_mode               0\n\n        if\
+      \ { $http_path == \"/microsoft-server-activesync\" } {\n        }\n        elseif\
+      \ { $http_path == \"/autodiscover/autodiscover.xml\" } {\n            set f_auto_discover\
+      \ 1\n        }\n        else return\n\n        if { ! [ info exists src_ip ]\
+      \ } {\n            set src_ip                            [IP::remote_addr]\n\
+      \        }\n        if { ! [ info exists PROFILE_RESTRICT_SINGLE_IP ] } {\n\
+      \            set PROFILE_RESTRICT_SINGLE_IP  \t  1\n        }\n        # Only\
+      \ allow HTTP Basic Authentication.\n        set auth_info_b64enc           \
+      \     \"\"\n        set http_hdr_auth                   [HTTP::header Authorization]\n\
+      \        regexp -nocase {Basic (.*)} $http_hdr_auth match auth_info_b64enc\n\
+      \        if { $auth_info_b64enc == \"\" } {\n            set http_hdr_auth \"\
+      \"\n        }\n\n        if { $http_hdr_auth == \"\" } {\n            log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX Empty/invalid HTTP\
+      \ Basic Authorization header\"\n            HTTP::respond 401 content $static::actsync_401_http_body\
+      \ Connection close\n            return\n        }\n\n        set MRHSession_cookie\
+      \               [HTTP::cookie value MRHSession]\n        # Do we have valid\
+      \ MRHSession cookie.\n        if { $MRHSession_cookie != \"\" } {\n        \
+      \    if { [ACCESS::session exists -state_allow -sid $MRHSession_cookie] } {\n\
+      \                log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *VALID* MRHSession cookie: $MRHSession_cookie\"\n                # Default\
+      \ profile access setting is false\n                if { $PROFILE_RESTRICT_SINGLE_IP\
+      \ == 0 } {\n                    return\n                }\n                elseif\
+      \ { [ IP::addr $src_ip equals [ ACCESS::session data get -sid $MRHSession_cookie\
+      \ \"session.user.clientip\" ] ] } {\n                    log -noname accesscontrol.local1.debug\
+      \ \"$static::ACCESS_LOG_PREFIX source IP matched\"\n                    return\n\
+      \                }\n                else {\n                    log -noname\
+      \ accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX source IP does not\
+      \ matched\"\n                }\n            }\n            else {\n        \
+      \        log -noname accesscontrol.local1.debug \"$static::ACCESS_LOG_PREFIX\
+      \ HTTP *INVALID* MRHSession cookie: $MRHSession_cookie\"\n            }\n  \
+      \          set MRHSession_cookie \"\"\n            HTTP::cookie remove MRHSession\n\
+      \        }\n\n        set apm_username                    [ string tolower [HTTP::username]\
+      \ ]\n        set apm_password                    [HTTP::password]\n\n      \
+      \  if { $PROFILE_RESTRICT_SINGLE_IP == 0 } {\n            binary scan [md5 \"\
+      $apm_password$\"] H* user_hash\n        } else {\n            binary scan [md5\
+      \ \"$apm_password$src_ip\"] H* user_hash\n        }\n        set user_key {}\n\
+      \        append user_key $apm_username \".\" $user_hash\n        unset user_hash\n\
+      \n        set f_insert_clientless_mode    0\n        set apm_cookie_list   \
+      \          [ ACCESS::user getsid $user_key ]\n        if { [ llength $apm_cookie_list\
+      \ ] != 0 } {\n            set apm_cookie [ ACCESS::user getkey [ lindex $apm_cookie_list\
+      \ 0 ] ]\n            if { $apm_cookie != \"\" } {\n                HTTP::cookie\
+      \ insert name MRHSession value $apm_cookie\n            } else {\n         \
+      \       set f_insert_clientless_mode 1\n            }\n        } else {\n  \
+      \          set f_insert_clientless_mode 1\n        }\n\n        if { $f_insert_clientless_mode\
+      \ == 1 } {\n            HTTP::header insert \"clientless-mode\" 1\n        \
+      \    HTTP::header insert \"username\" $apm_username\n            HTTP::header\
+      \ insert \"password\" $apm_password\n        }\n        unset f_insert_clientless_mode\n\
+      \    }\n    when ACCESS_SESSION_STARTED {\n        if { [ info exists user_key\
+      \ ] } {\n            ACCESS::session data set \"session.user.uuid\" $user_key\n\
+      \            ACCESS::session data set \"session.user.microsoft-exchange-client\"\
+      \ 1\n            ACCESS::session data set \"session.user.activesync\" 1\n  \
+      \          if { [ info exists f_auto_discover ] && $f_auto_discover == 1 } {\n\
+      \                set f_auto_discover 0\n                ACCESS::session data\
+      \ set \"session.user.microsoft-autodiscover\" 1\n            }\n        }\n\
+      \    }\n    when ACCESS_POLICY_COMPLETED {\n        if { ! [ info exists user_key\
+      \ ] } {\n            return\n        }\n\n        set policy_result [ACCESS::policy\
+      \ result]\n        switch $policy_result {\n        \"allow\" {\n        }\n\
+      \        \"deny\" {\n            ACCESS::respond 401 content $static::actsync_401_http_body\
+      \ Connection close\n            ACCESS::session remove\n        }\n        default\
+      \ {\n            ACCESS::respond 503 content $static::actsync_503_http_body\
+      \ Connection close\n            ACCESS::session remove\n        }\n        }\n\
+      \n        unset user_key\n    }\ndefinition-signature jaSGZiyISQHfZu1LLt3cmS5U/vOKRUOkQZ6ZHyc0fdnKtv+VsbRUIgzQwpV1dsN+wzuFhWxEsvSzleGZSrRmlBRbO63jjeBg9jzCqj8/hfOHhPCMSP59w3/opbCnAlqt+TyCFDY1cJ6/b/SWS+irPeAt6gAl0kmw2TIBlJvxm93zTu8aWyBgQV+205oBEPjYVHjaFPGFPk5+5LnZWrBO1fC0jBqpkCT+LWxBGeVHRTC8sGup0SuhXFPfWu3oB1uTTo5SKr8ZxRUFUrLTHNj/W8RKWg2C34958TFngZNQhpxg+XGWEFJXpCkeM2fVJXN3mymRWxuanYLU26ZKXuNNxw==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_krbdelegate: {definition: "when HTTP_REQUEST {\n        set thecert\
+      \ \"\"\n        set ckname F5KRBAUTH\n        set ckpass abc123\n        set\
+      \ authprofiles [PROFILE::list auth]\n        # Search the auth profiles for\
+      \ the krbdelegate(7) and grab cookie info\n        foreach profname $authprofiles\
+      \ {\n            if { [PROFILE::auth $profname type] == 7 } {\n            \
+      \    set tmpckname [PROFILE::auth $profname cookie_name]\n                set\
+      \ tmpckpass [PROFILE::auth $profname cookie_key]\n                if {[PROFILE::auth\
+      \ $profname cookie_name] != \"\" } {\n                    set ckname $tmpckname\n\
+      \                    set ckpass $tmpckpass\n                    break\n    \
+      \            }\n            }\n        }\n        set seecookie 0\n        set\
+      \ insertcookie 0\n        # check for the cookie\n        if {not [info exists\
+      \ tmm_auth_http_sids(krbdelegate)]} {\n            set tmm_auth_sid [AUTH::start\
+      \ pam default_krbdelegate]\n            set tmm_auth_http_sids(krbdelegate)\
+      \ $tmm_auth_sid\n            AUTH::subscribe $tmm_auth_sid\n        } else {\n\
+      \            set tmm_auth_sid $tmm_auth_http_sids(krbdelegate)\n        }\n\
+      \        if { [PROFILE::exists clientssl] } {\n            set certcmd \"SSL::cert\
+      \ 0\"\n            set thecert [ eval $certcmd ]\n        }\n        if { $thecert\
+      \ == \"\" } {\n            # if no cert, assume old kerb delegation\n      \
+      \      # if there is no Authorization header and no cookie, get one.\n     \
+      \       if { ([HTTP::header Authorization] == \"\") and\n                  (not\
+      \ [HTTP::cookie exists $ckname])} {\n                HTTP::respond 401 WWW-Authenticate\
+      \ Negotiate\n                return\n            }\n        }\n        if {[HTTP::cookie\
+      \ exists $ckname]} {\n            set ckval [HTTP::cookie decrypt $ckname $ckpass]\n\
+      \            AUTH::username_credential $tmm_auth_sid \"cookie\"\n          \
+      \  AUTH::password_credential $tmm_auth_sid $ckval\n            set seecookie\
+      \ 1\n        } else {\n            if { $thecert == \"\" } {\n             \
+      \   # Kerberos Delegation - set username\n                # Strip off the Negotiate\
+      \ before the base64d goodness\n                AUTH::username_credential $tmm_auth_sid\
+      \ [lindex [HTTP::header Authorization] 1]\n            }\n            else {\n\
+      \                # Protocol Transition - set ttm_auth_sid\n                AUTH::username_credential\
+      \ $tmm_auth_sid \"krpprottran\"\n                AUTH::cert_credential $tmm_auth_sid\
+      \ $thecert\n            }\n            AUTH::password_credential $tmm_auth_sid\
+      \ \"xxxx\"\n        }\n        AUTH::authenticate $tmm_auth_sid\n\n        if\
+      \ {not [info exists tmm_auth_http_collect_count]} {\n            HTTP::collect\n\
+      \            set tmm_auth_http_successes 0\n            set tmm_auth_http_collect_count\
+      \ 1\n        } else {\n            incr tmm_auth_http_collect_count\n      \
+      \  }\n    }\n    when AUTH_RESULT {\n        if {not [info exists tmm_auth_http_sids(krbdelegate)]\
+      \ or \\\n            ($tmm_auth_http_sids(krbdelegate) != [AUTH::last_event_session_id])\
+      \ or \\\n            (not [info exists tmm_auth_http_collect_count])} {\n  \
+      \          return\n        }\n        if {[AUTH::status] == 0} {\n         \
+      \   incr tmm_auth_http_successes\n        }\n        # If multiple auth sessions\
+      \ are pending and\n        # one failure results in termination and this is\
+      \ a failure\n        # or enough successes have now occurred\n        if {([array\
+      \ size tmm_auth_http_sids] > 1) and \\\n            ((not [info exists tmm_auth_http_sufficient_successes]\
+      \ or \\\n             ($tmm_auth_http_successes >= $tmm_auth_http_sufficient_successes)))}\
+      \ {\n            # Abort the other auth sessions\n            foreach {type\
+      \ sid} [array get tmm_auth_http_sids] {\n                unset tmm_auth_http_sids($type)\n\
+      \                if {($type ne \"krbdelegate\") and ($sid != -1)} {\n      \
+      \              AUTH::abort $sid\n                    incr tmm_auth_http_collect_count\
+      \ -1\n               }\n            }\n        }\n        # If this is the last\
+      \ outstanding auth then either\n        # release or respond to this session\n\
+      \        incr tmm_auth_http_collect_count -1\n        if {$tmm_auth_http_collect_count\
+      \ == 0} {\n            unset tmm_auth_http_collect_count\n            if { [AUTH::status]\
+      \ == 0 } {\n                array set pamout [AUTH::response_data]\n       \
+      \         HTTP::header replace Authorization \"Negotiate $pamout(krbdelegate:attr:SPNEGO)\"\
+      \n                if {$seecookie == 0} {\n                    set insertcookie\
+      \ $pamout(krbdelegate:attr:KRB5CCNAME)\n                }\n                HTTP::release\n\
+      \            } else {\n                HTTP::respond 401 WWW-Authenticate Negotiate\
+      \ \"Set-Cookie\" \"$ckname= ; expires=Wed Dec 31 16:00:00 1969\"\n         \
+      \   }\n        }\n    }\n    # When the response goes out, if we need to insert\
+      \ a cookie, do it.\n    when HTTP_RESPONSE {\n        if {$insertcookie != 0}\
+      \ {\n            HTTP::cookie insert name $ckname value $insertcookie\n    \
+      \        HTTP::cookie encrypt $ckname $ckpass\n        }\n    }\ndefinition-signature\
+      \ mILi/VF69pqpNg+XJ4nClBl8+zq4v9FsiBYnKjX3zLZOChRWKt5CwkwpsbCRzx5DnvHglp9uXDYrjqcAFvM5aRA2R5LAhKQSq6pVPwHdZUJluYv0t3n6af/vSyc7KYsx6gga1jLuiFZaEzmG8c+r4igxwEee874iQBjYaWhHyKYGhlhly/Ez2FE9DNRpRepz2sq/jaKzEmmMod3CCXurXVGlC/Pk8qnbNid1yC15DGosrAKW1d8lhYbVBaXVQ1ahrr/UPYnDdHB1BiWUzRSS4uOKuUyUmT/xPI14/Nwv8zdFvlu+AnnD543zH6KhdSHhJ3zCVy2HSZ5wPuN3YswcBA==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_ldap: {definition: "when HTTP_REQUEST {\n        if {not [info\
+      \ exists tmm_auth_http_sids(ldap)]} {\n            set tmm_auth_sid [AUTH::start\
+      \ pam default_ldap]\n            set tmm_auth_http_sids(ldap) $tmm_auth_sid\n\
+      \            if {[info exists tmm_auth_subscription]} {\n                AUTH::subscribe\
+      \ $tmm_auth_sid\n            }\n        } else {\n            set tmm_auth_sid\
+      \ $tmm_auth_http_sids(ldap)\n        }\n        AUTH::username_credential $tmm_auth_sid\
+      \ [HTTP::username]\n        AUTH::password_credential $tmm_auth_sid [HTTP::password]\n\
+      \        AUTH::authenticate $tmm_auth_sid\n\n        if {not [info exists tmm_auth_http_collect_count]}\
+      \ {\n            HTTP::collect\n            set tmm_auth_http_successes 0\n\
+      \            set tmm_auth_http_collect_count 1\n        } else {\n         \
+      \   incr tmm_auth_http_collect_count\n        }\n    }\n    when AUTH_RESULT\
+      \ {\n        if {not [info exists tmm_auth_http_sids(ldap)] or \\\n        \
+      \   ($tmm_auth_http_sids(ldap) != [AUTH::last_event_session_id]) or \\\n   \
+      \        (not [info exists tmm_auth_http_collect_count])} {\n            return\n\
+      \        }\n        if {[AUTH::status] == 0} {\n            incr tmm_auth_http_successes\n\
+      \        }\n        # If multiple auth sessions are pending and\n        # one\
+      \ failure results in termination and this is a failure\n        # or enough\
+      \ successes have now occurred\n        if {([array size tmm_auth_http_sids]\
+      \ > 1) and \\\n            ((not [info exists tmm_auth_http_sufficient_successes]\
+      \ or \\\n             ($tmm_auth_http_successes >= $tmm_auth_http_sufficient_successes)))}\
+      \ {\n            # Abort the other auth sessions\n            foreach {type\
+      \ sid} [array get tmm_auth_http_sids] {\n                unset tmm_auth_http_sids($type)\n\
+      \                if {($type ne \"ldap\") and ($sid != -1)} {\n             \
+      \       AUTH::abort $sid\n                    incr tmm_auth_http_collect_count\
+      \ -1\n                }\n            }\n        }\n\n        # If this is the\
+      \ last outstanding auth then either\n        # release or respond to this session\n\
+      \        incr tmm_auth_http_collect_count -1\n        if {$tmm_auth_http_collect_count\
+      \ == 0} {\n            unset tmm_auth_http_collect_count\n            if {[AUTH::status]\
+      \ == 0} {\n                HTTP::release\n            } else {\n           \
+      \     HTTP::respond 401\n            }\n        }\n    }\ndefinition-signature\
+      \ d+BwFQlDUIY7Jf5jfpCFuEkwn/jJ+3ZjEQLQej71v7TxzQpxJps4rDaU2YxBNyM9CTAIWT3DRdLqYZAnIHqVpOIRIE/ALk0v0o79IxJIES4nUTE9UTHKM8GN13VBkihf1I8O9DmwOHgB1s0HV+A/dy5mDiyBFpbamyv6rJCASItyPp2Y7iKfcMHEFe+qgvZFA2B131QVAosIn6pFribwU5LSvArIul5pIgX1tcuI+BLPkaJy6xoN9AQcah/ufgUCOmAvkc/K5LteBkxG3ItldFNaxOtAPXDt5IDhrBuMxsvRs7P+vMbfNiGb+QSakipxML2EmwCRiacxQTZn/0DDrw==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_radius: {definition: "when HTTP_REQUEST {\n        if {not [info\
+      \ exists tmm_auth_http_sids(radius)]} {\n            set tmm_auth_sid [AUTH::start\
+      \ pam default_radius]\n            set tmm_auth_http_sids(radius) $tmm_auth_sid\n\
+      \            if {[info exists tmm_auth_subscription]} {\n                AUTH::subscribe\
+      \ $tmm_auth_sid\n            }\n        } else {\n            set tmm_auth_sid\
+      \ $tmm_auth_http_sids(radius)\n        }\n        AUTH::username_credential\
+      \ $tmm_auth_sid [HTTP::username]\n        AUTH::password_credential $tmm_auth_sid\
+      \ [HTTP::password]\n        AUTH::authenticate $tmm_auth_sid\n\n        if {not\
+      \ [info exists tmm_auth_http_collect_count]} {\n            HTTP::collect\n\
+      \            set tmm_auth_http_successes 0\n            set tmm_auth_http_collect_count\
+      \ 1\n        } else {\n            incr tmm_auth_http_collect_count\n      \
+      \  }\n    }\n    when AUTH_RESULT {\n        if {not [info exists tmm_auth_http_sids(radius)]\
+      \ or \\\n            ($tmm_auth_http_sids(radius) != [AUTH::last_event_session_id])\
+      \ or \\\n            (not [info exists tmm_auth_http_collect_count])} {\n  \
+      \          return\n        }\n        if {[AUTH::status] == 0} {\n         \
+      \   incr tmm_auth_http_successes\n        }\n        # If multiple auth sessions\
+      \ are pending and\n        # one failure results in termination and this is\
+      \ a failure\n        # or enough successes have now occurred\n        if {([array\
+      \ size tmm_auth_http_sids] > 1) and \\\n            ((not [info exists tmm_auth_http_sufficient_successes]\
+      \ or \\\n             ($tmm_auth_http_successes >= $tmm_auth_http_sufficient_successes)))}\
+      \ {\n            # Abort the other auth sessions\n            foreach {type\
+      \ sid} [array get tmm_auth_http_sids] {\n                unset tmm_auth_http_sids($type)\n\
+      \                if {($type ne \"radius\") and ($sid != -1)} {\n           \
+      \         AUTH::abort $sid\n                    incr tmm_auth_http_collect_count\
+      \ -1\n                }\n            }\n        }\n        # If this is the\
+      \ last outstanding auth then either\n        # release or respond to this session\n\
+      \        incr tmm_auth_http_collect_count -1\n        if {$tmm_auth_http_collect_count\
+      \ == 0} {\n            unset tmm_auth_http_collect_count\n            if { [AUTH::status]\
+      \ == 0 } {\n                HTTP::release\n            } else {\n          \
+      \      HTTP::respond 401\n            }\n        }\n    }\ndefinition-signature\
+      \ m0ZhOZjHe7lvErKAbir601WnOlWEPfEh/Qc5wayIKc6B16E4IF4F+Jh8QGdYRgNOrk3Qc3Gid6zQZcCcbIzfR3NKOxfVX+tl0KfiEN1lqBQMLu3/AooE+/YTC5oCPuvV6TK/JHRLiMiexYgRx6G+AFU7xg/w/YzgvV0bjsd9OxdIUB3WO5JOUweCG6q24zhVgN+3QIIiBnuKaMeHtRSw29xVpuQqgNKVG7RaPu15loA0xp8s4fxMF0YHDYPuQuu0PLfvYTqsSP0cI3Kdbsg5JgAIAcdHlFIW3NaUJBPMGRLOAvSGibIMVhFmUfC52LNQ4iORtokInaHyYUtPQ/yHIw==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_ssl_cc_ldap: {definition: "when CLIENT_ACCEPTED {\n        set\
+      \ tmm_auth_ssl_cc_ldap_sid 0\n        set tmm_auth_ssl_cc_ldap_done 0\n    }\n\
+      \    when CLIENTSSL_CLIENTCERT {\n        if {[SSL::cert count] == 0} {\n  \
+      \          return\n        }\n        set tmm_auth_ssl_cc_ldap_done 0\n    \
+      \    if {$tmm_auth_ssl_cc_ldap_sid == 0} {\n            set tmm_auth_ssl_cc_ldap_sid\
+      \ [AUTH::start pam default_ssl_cc_ldap]\n            if {[info exists tmm_auth_subscription]}\
+      \ {\n                AUTH::subscribe $tmm_auth_ssl_cc_ldap_sid\n           \
+      \ }\n        }\n        AUTH::cert_credential $tmm_auth_ssl_cc_ldap_sid [SSL::cert\
+      \ 0]\n        AUTH::authenticate $tmm_auth_ssl_cc_ldap_sid\n        SSL::handshake\
+      \ hold\n    }\n    when CLIENTSSL_HANDSHAKE {\n        set tmm_auth_ssl_cc_ldap_done\
+      \ 1\n    }\n    when AUTH_RESULT {\n        if {[info exists tmm_auth_ssl_cc_ldap_sid]\
+      \ and \\\n            ($tmm_auth_ssl_cc_ldap_sid == [AUTH::last_event_session_id])}\
+      \ {\n            set tmm_auth_status [AUTH::status]\n            if {$tmm_auth_status\
+      \ == 0} {\n                set tmm_auth_ssl_cc_ldap_done 1\n               \
+      \ SSL::handshake resume\n            } elseif {$tmm_auth_status != -1 || $tmm_auth_ssl_cc_ldap_done\
+      \ == 0} {\n                reject\n            }\n        }\n    }\ndefinition-signature\
+      \ O2ctQteahGXIbb4l9/vERvtwKeyl51hGNNGgccddtwme/6opsgPJu5gaiVGUXYYDkbcjFdfgDTU9oDPkLl5JmZ3VcExnlnvxLpVDuM/fKqxbgoRQZ6nl0mEceHmWxRY9AlhrODtJZxNRbQBu4OOCYS+yWioKgKkrBwQaEoIFBPSSUmeIPZHTXdNnLXwxxkY75O5Sc4sTkYQ3BvTrlu/frnwweed6qw9bWatN865CIzP3Spq0ELY0Q4bvxo+0JdLheFv2BfKUethrjEXcxiD9Ros0fnvQ83qaCHqt18xEyhakdKAf4gKZJt9UApkRn+1ZTPNJFzgQyPPYQGvU/y9JAQ==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_ssl_crldp: {definition: "when CLIENT_ACCEPTED {\n        set tmm_auth_ssl_crldp_sid\
+      \ 0\n        set tmm_auth_ssl_crldp_done 0\n    }\n    when CLIENTSSL_CLIENTCERT\
+      \ {\n        if {[SSL::cert count] == 0} {\n            return\n        }\n\
+      \        set tmm_auth_ssl_crldp_done 0\n        if {$tmm_auth_ssl_crldp_sid\
+      \ == 0} {\n            set tmm_auth_ssl_crldp_sid [AUTH::start pam default_ssl_crldp]\n\
+      \            if {[info exists tmm_auth_subscription]} {\n                AUTH::subscribe\
+      \ $tmm_auth_ssl_crldp_sid\n            }\n        }\n        AUTH::cert_credential\
+      \ $tmm_auth_ssl_crldp_sid [SSL::cert 0]\n        AUTH::cert_issuer_credential\
+      \ $tmm_auth_ssl_crldp_sid [SSL::cert issuer 0]\n        AUTH::authenticate $tmm_auth_ssl_crldp_sid\n\
+      \        SSL::handshake hold\n    }\n    when CLIENTSSL_HANDSHAKE {\n      \
+      \  set tmm_auth_ssl_crldp_done 1\n    }\n    when AUTH_RESULT {\n        if\
+      \ {[info exists tmm_auth_ssl_crldp_sid] and \\\n            ($tmm_auth_ssl_crldp_sid\
+      \ == [AUTH::last_event_session_id])} {\n            set tmm_auth_status [AUTH::status]\n\
+      \            if {$tmm_auth_status == 0} {\n                set tmm_auth_ssl_crldp_done\
+      \ 1\n                SSL::handshake resume\n            } elseif {$tmm_auth_status\
+      \ != -1 || $tmm_auth_ssl_crldp_done == 0} {\n                reject\n      \
+      \      }\n        }\n    }\ndefinition-signature PhTy24ctbtx0d4kFIFO6+Fr9W3a/7OetZ7nlh18mpH6BB9t1dB2LNayATLZ3q4iT4wLLdyyxA+g4jdrNBeuZVpM2JOBlhwcyIcTBFLQN4H/mkWErH4Vz9ZMxVduUxHN6fIh8zDQuJJYoRVlz087/vIVvk6ygbPwS9KqTdYBa3Nn79YmIVn1NXKyVoCg/40EZ3iNklwIfKctwqGU5ELKbhwk8CGCvexDbJcwRqv8nAETC4B/nc61jpGcihpOJchJFb3buTiAKwfxSYkx90UG4EnwsyA4GqUNIfS02Dj5rYSMH403CNNBKG2AA+ZGy9by2O3bb9lq/VNGPDmsnMEff1g==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_ssl_ocsp: {definition: "when CLIENT_ACCEPTED {\n        set tmm_auth_ssl_ocsp_sid\
+      \ 0\n        set tmm_auth_ssl_ocsp_done 0\n    }\n    when CLIENTSSL_CLIENTCERT\
+      \ {\n        if {[SSL::cert count] == 0} {\n            return\n        }\n\
+      \        set tmm_auth_ssl_ocsp_done 0\n        if {$tmm_auth_ssl_ocsp_sid ==\
+      \ 0} {\n            set tmm_auth_ssl_ocsp_sid [AUTH::start pam default_ssl_ocsp]\n\
+      \            if {[info exists tmm_auth_subscription]} {\n                AUTH::subscribe\
+      \ $tmm_auth_ssl_ocsp_sid\n            }\n        }\n        AUTH::cert_credential\
+      \ $tmm_auth_ssl_ocsp_sid [SSL::cert 0]\n        AUTH::cert_issuer_credential\
+      \ $tmm_auth_ssl_ocsp_sid [SSL::cert issuer 0]\n        AUTH::authenticate $tmm_auth_ssl_ocsp_sid\n\
+      \        SSL::handshake hold\n    }\n    when CLIENTSSL_HANDSHAKE {\n      \
+      \  set tmm_auth_ssl_ocsp_done 1\n    }\n    when AUTH_RESULT {\n        if {[info\
+      \ exists tmm_auth_ssl_ocsp_sid] and \\\n            ($tmm_auth_ssl_ocsp_sid\
+      \ == [AUTH::last_event_session_id])} {\n            set tmm_auth_status [AUTH::status]\n\
+      \            if {$tmm_auth_status == 0} {\n                set tmm_auth_ssl_ocsp_done\
+      \ 1\n                SSL::handshake resume\n            } elseif {$tmm_auth_status\
+      \ != -1 || $tmm_auth_ssl_ocsp_done == 0} {\n                reject\n       \
+      \     }\n        }\n    }\ndefinition-signature mHRNmZiszQh85wPdt5PxM2ASLXyW47LE3CM5tS11M1lTe9ttjlWDc6yBdy5VFjC6H2O2DJ+fyrBmeMen16RVWPhUoq8YOJC9ZiuuLc6T/rW9GsopSHFPBLRjL/EPulNkuGB/DtxYvwXfXOyBuVRw+E/TYkKVi6cIrk4+e9mOnCo9biWycrRfemWwYyDCqouEaDK2huYnQ1rKyYAvIWxfd3rXXw6+jdpuvL/6RFXJjaLTJ/f1pVMHP5kuI2K/dkeojqDDgr1d1GnjIFFX2Azh5qZpaL1urPfn/M6C/7sXzew1PU0ow10MQtKKqAno5IpEpn+cPZlCs3d2Y1khtMqUug==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_auth_tacacs: {definition: "when HTTP_REQUEST {\n        if {not [info\
+      \ exists tmm_auth_http_sids(tacacs)]} {\n            set tmm_auth_sid [AUTH::start\
+      \ pam default_tacacs]\n            set tmm_auth_http_sids(tacacs) $tmm_auth_sid\n\
+      \            if {[info exists tmm_auth_subscription]} {\n                AUTH::subscribe\
+      \ $tmm_auth_sid\n            }\n        } else {\n            set tmm_auth_sid\
+      \ $tmm_auth_http_sids(tacacs)\n        }\n        AUTH::username_credential\
+      \ $tmm_auth_sid [HTTP::username]\n        AUTH::password_credential $tmm_auth_sid\
+      \ [HTTP::password]\n        AUTH::authenticate $tmm_auth_sid\n\n        if {not\
+      \ [info exists tmm_auth_http_collect_count]} {\n            HTTP::collect\n\
+      \            set tmm_auth_http_successes 0\n            set tmm_auth_http_collect_count\
+      \ 1\n        } else {\n            incr tmm_auth_http_collect_count\n      \
+      \  }\n    }\n    when AUTH_RESULT {\n        if {not [info exists tmm_auth_http_sids(tacacs)]\
+      \ or \\\n            ($tmm_auth_http_sids(tacacs) != [AUTH::last_event_session_id])\
+      \ or \\\n            (not [info exists tmm_auth_http_collect_count])} {\n  \
+      \          return\n        }\n        if {[AUTH::status] == 0} {\n         \
+      \   incr tmm_auth_http_successes\n        }\n        # If multiple auth sessions\
+      \ are pending and\n        # one failure results in termination and this is\
+      \ a failure\n        # or enough successes have now occurred\n        if {([array\
+      \ size tmm_auth_http_sids] > 1) and \\\n            ((not [info exists tmm_auth_http_sufficient_successes]\
+      \ or \\\n             ($tmm_auth_http_successes >= $tmm_auth_http_sufficient_successes)))}\
+      \ {\n            # Abort the other auth sessions\n            foreach {type\
+      \ sid} [array get tmm_auth_http_sids] {\n                unset tmm_auth_http_sids($type)\n\
+      \                if {($type ne \"tacacs\") and ($sid != -1)} {\n           \
+      \         AUTH::abort $sid\n                    incr tmm_auth_http_collect_count\
+      \ -1\n                }\n            }\n        }\n        # If this is the\
+      \ last outstanding auth then either\n        # release or respond to this session\n\
+      \        incr tmm_auth_http_collect_count -1\n        if {$tmm_auth_http_collect_count\
+      \ == 0} {\n            unset tmm_auth_http_collect_count\n            if { [AUTH::status]\
+      \ == 0 } {\n                HTTP::release\n            } else {\n          \
+      \      HTTP::respond 401\n            }\n        }\n    }\ndefinition-signature\
+      \ GHNO23blFC/AnIkRk9DSySYK2LiesD7h2DliAMIsVIjBk/RFL8XvZ+8WuKMVibuCiAhPWWvUu6nKsTnk9pX5/kc4yV6qRHcaaO+UaqT1/KQZsVXShCf0YCzqjRQIduJhUFFn0MUDhDmo/8ti0Upo6loKBxW3TODx5y8Jf3dTKmX2oRMfrkiMEyVtv38O7MDwJ1H5/xF2z1r2+nWGUJThZq/ILpfzcdnI7X5j/PxnAGuL1zciRIZ/0RIyMvYch0GaoXaKLVaONzDm0nHEJ+hZ7Vp8mQZiRitc8MGs1Ku9yLamxosUFAdRVnNQOLXGrlvEm94oU6XR3mq0oeqx9+dnOQ==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/_sys_https_redirect: {definition: "when HTTP_REQUEST {\n       HTTP::redirect\
+      \ https://[getfield [HTTP::host] \":\" 1][HTTP::uri]\n    }\ndefinition-signature\
+      \ mwyl4XlRKRMQc0prWs7RtpgPcNfocOKb+MaFwAnQgAuUZZyG68OaGZsOCN3poUOFdHOc6fk2XAdGRmTRiP/7BCT7thsOX5zLFzA1N1wcr57KWVzEZt3ezxVXn2Z974OmbWm7P5Lclcr7N3adrLJMWfyfPPVF1tUYn0IQPD2QNMmfbcbr1oCuO93n/5dn0s6/EacHZGG53hVibW7xQuJXdMtoQ6ArSZ4U3n4vCDTb6NLYbAj6PirVzKY2pcsWFHFUSVrphSFwERc8+0XGHUE6Cb3ihzygoZc2cQ5jk3frFY70MkDluPTShFRbHd7PlMPRezrfkVZVeUHA/iBPcYcD+w==\n",
+    description: '', verification_status: VERIFICATION_STATUS_SIGNATURE_VERIFIED}
+  /Common/http-redirect-https.tcl: {definition: "when HTTP_REQUEST { \n    HTTP::redirect\
+      \ \"https://[HTTP::host][HTTP::uri]\" \n}\n", description: '', verification_status: VERIFICATION_STATUS_NONE}
+self_ip:
+  /Common/north:
+    address: 172.16.1.254
+    allow_access_list:
+      mode: ALLOW_MODE_DEFAULTS
+      protocol_ports: []
+    description: ''
+    enforced_firewall_policy: ''
+    floating_state: STATE_DISABLED
+    is_traffic_group_inherited: 0
+    netmask: 255.255.255.0
+    staged_firewall_policy: ''
+    traffic_group: /Common/traffic-group-local-only
+    vlan: /Common/north
+  /Common/one-arm:
+    address: 192.168.189.254
+    allow_access_list:
+      mode: ALLOW_MODE_DEFAULTS
+      protocol_ports: []
+    description: ''
+    enforced_firewall_policy: ''
+    floating_state: STATE_DISABLED
+    is_traffic_group_inherited: 0
+    netmask: 255.255.255.0
+    staged_firewall_policy: ''
+    traffic_group: /Common/traffic-group-local-only
+    vlan: /Common/one-arm
+  /Common/south:
+    address: 172.16.100.254
+    allow_access_list:
+      mode: ALLOW_MODE_DEFAULTS
+      protocol_ports: []
+    description: ''
+    enforced_firewall_policy: ''
+    floating_state: STATE_DISABLED
+    is_traffic_group_inherited: 0
+    netmask: 255.255.255.0
+    staged_firewall_policy: ''
+    traffic_group: /Common/traffic-group-local-only
+    vlan: /Common/south
+software:
+- active: 1
+  base_build: 0.0.2
+  build: 0.0.2
+  edition: null
+  installation_id: {chassis_slot_id: 0, install_volume: HD1.1}
+  product: BIG-IP
+  status: complete
+  version: 12.1.3.4
+system_info:
+  base_mac_address: 00:0C:29:B9:18:2C
+  blade_temperature: []
+  chassis_slot_information: []
+  globally_unique_identifier: 00:0C:29:B9:18:2C
+  group_id: DefaultGroup
+  hardware_information:
+  - model: Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+    name: cpus
+    slot: 0
+    type: HARDWARE_BASE_BOARD
+    versions:
+    - {name: cache size, value: 6144 KB}
+    - {name: cores, value: '4'}
+    - {name: cpu MHz, value: '2494.559'}
+    - {name: cpu sockets, value: '0'}
+    - {name: cpu stepping, value: '1'}
+  - model: VMware Virtual S
+    name: HD1
+    slot: 0
+    type: HARDWARE_PHDISK
+    versions:
+    - {name: Manufacturer, value: 'VMware,'}
+    - {name: SerialNumber, value: VMware-sda}
+    - {name: Size, value: 8.00G}
+    - {name: Firmware Version, value: '1.0'}
+    - {name: Media Type, value: HDD}
+  marketing_name: BIG-IP Virtual Edition
+  product_information:
+    package_edition: Point Release 4
+    package_version: Build 0.0.2 - Tue Apr 10 14:26:02 PDT 2018
+    product_code: BIG-IP
+    product_features: [Bandwidth Control, ZoneRunner - DNS Zone Management, Network
+        and non-HTTP Protocols DoS Protection, FTP Protocol Security, HTTP Protocol
+        Security, SMTP Protocol Security, App Tunnel, Active Directory/Windows Domain
+        Authentication, LDAP Authentication, RADIUS Authentication, SecurID Authentication,
+      Base Endpoint Security Checks, Antivirus Checks, Firewall Checks, Machine Certificate
+        Checks, Protected Workspace, Secure Virtual Keyboard, Network Access, Remote
+        Desktop, Access Policy Manager Support, 'Concurrent SWG Sessions (Limited):
+        10', Portal Access, 'Concurrent Connectivity Sessions (Limited): 10', HTTP
+        Protocol DoS Protection, DNS Firewall, Global Application Support, Link Total
+        Cost Load Balancing, CNAME Redirection, Global Custom Region Definitions,
+      Link Capacity Load Balancing, GTM Failover To One Data Center, IP Classifier,
+      Internet Weather Map, Global Pool Alternate Load Balancing, Global Path Completion
+        Rate Load Balancing, Global CPU Load Balancing, Global Dynamic Ratio Load
+        Balancing, Global Pool Fallback Load Balancing, Global Availability Load Balancing,
+      Global Path Router Hops Load Balancing, Global KBps Load Balancing, Global Least
+        Connections Load Balancing, Global Multiple Pools Support, Multi-site Load
+        Balancing, Non-Local Server Load Balancing, Global Packet Rate LB Mode, Global
+        Application Persistence, Global Dynamic Persistence, Proximity Table Support,
+      Global QoS Load Balancing, Global Ratio Load Balancing, Global Return To DNS
+        Load Balancing, Global Round Robin Load Balancing, Global Path Round-Trip
+        Time Load Balancing, Global Topoplogy Rules, Global VS Capacity Load Balancing,
+      Global VS Score Load Balancing, Link Objects - Basic Multihoming Support, Link
+        Statistics, Link Capacity Limits, 'GTM Licensed Objects: Unlimited', Global
+        Availability Limits on Metrics, BIG-IP Monitor, Global ECV Support, EAV Monitor,
+      FTP Monitor, GATEWAY ICMP Monitor, GTP Monitor, HTTP Monitor, HTTPS Monitor,
+      IMAP Monitor, LDAP Monitor, LDAP Over SSL Monitor, SNMP Link Monitors, Microsoft
+        SQL Monitor, MySQL Monitor, NNTP Monitor, Oracle Monitor, Network Path Monitoring,
+      POP3 Monitor, PostgreSQL Monitor, RADIUS Monitor, RDP Monitor, RealN Monitor,
+      Reverse Keyword, Monitor Rules, SCRIPTED Monitor, SIP Monitor, SMTP Monitor,
+      Global 3rd Party SLB MIB Monitors, Soap Monitor, TCP Monitor, TCP Half Open
+        Monitor, Transparent Device Monitor, UDP Monitor, VS Dependency Chains, WAP
+        Monitor, WMI Monitor, GTM Monitors, Multiple Data Center Support, Multiple
+        Links per DC Support, Global Static Persistence, Global Multiple A Record
+        Answers, Global Prober Pools, Global Proximity Based Traffic Direction, Link
+        Price Load Balancing, 'GTM Request Rate Fallback: 10000', 'GTM Request Rate
+        Limit: 10000', GTM Rules, Link Ratio Load Balancing, Global TM Support, Run
+        and develop custom iRulesLX plugins., Rate Shaping and Rate Class Support,
+      Traffic Classification L4, Traffic Classification iRules+L7, Stochastic Fair
+        Queuing Mode, Priority FIFO (ToS) Queuing Mode, QoS and ToS Tagging, Generic
+        Classification Engine, Connection Limits, OneConnect - Switching and Pooling,
+      Connection Rebinding, Connection Timeout, Database Proxy, Route Pool, DNS64
+        translation, DNS Cache/Resolver in TMM, 'DNS Services Licensed Objects: Unlimited',
+      DNS Request Rate Limiting, 'DNS Services Request Rate Fallback: Unlimited',
+      'DNS Services Request Rate Limit: Unlimited', DNS Services, DNS in TMM, DNSSEC,
+      FIX profile, Last Hop Pool, Active Active, Failover, Pool Min Up Members, State
+        Mirroring, VLAN Failsafe, HTTP traffic classifier, ICAP, iSession, iSNAT -
+        Rules Referencing SNAT Pools, Basic Load Balancing, Dynamic Ratio Load Balancing,
+      Fastest Load Balancing, L3 Addr Load Balancing, Least Connection Load Balancing,
+      Least Sessions Load Balancing, Observed Load Balancing, 'LB Pools Maximum Nodes:
+        Unlimited', Predictive Load Balancing, Priority Load Balancing, Ratio Load
+        Balancing, Ratio Session Load Balancing, Round Robin Load Balancing, UDP Packet
+        Load Balancing, Web Logic Load Balancing, DIAMETER Monitor, DNS Monitor, EAV
+        Monitor, FTP Monitor, gateway ICMP Monitor, HTTP Monitor, HTTPS Monitor, ICMP
+        Monitor, IMAP Monitor, Inband Monitor, LDAP Monitor, LDAP Over SSL Monitor,
+      Module Score Monitor, Microsoft SQL Monitor, MySQL Monitor, NNTP Monitor, Oracle
+        Monitor, POP3 Monitor, PostgreSQL Monitor, RADIUS Monitor, RealN Monitor,
+      Reverse Keyword, RPC Monitor, Monitor Rules, SASP Monitor, SCRIPTED Monitor,
+      SIP Monitor, SMB Monitor, SMTP Monitor, SNMP Monitor, Soap Monitor, TCP Monitor,
+      TCP Echo Monitor, TCP Half Open Monitor, Transparent Device Monitor, UDP Monitor,
+      Virtual Location Monitor, WAP Monitor, WMI Monitor, Monitors, Network Address
+        Translation, 6RD, LW4o6, MAP-E/T, Network Virtualization Protocols, Persistence,
+      Cookie Persistence, Simple Persistence, SIP Persistence, SSL Session ID Persistence,
+      Sticky Persistence, Universal Persistence, WTS Persistence, Pools, HTTP Content
+        Transformation, Fast L4, FTP, GTP, HTTP Header Transformation, HTTP, Probe
+        Control - IDS Traffic Management, HTTP Redirection, SIP, TCP, UDP, RAM Cache,
+      HTML Rewrite, URI Rewrite, RTSP switching, L4 iRules, L7 iRules, DNS iRules
+        Writing, User-Defined Statistics, iRules, SCTP support, SMTP profile, SNAT
+        Standard, SSL Forward Proxy, Address Translation, Port Translation, Transparent
+        Device Load Balancing, Message Routing Diameter, Message Routing SIP, Advanced
+        Firewall, Protocol Security, Application Acceleration Manager, Access Policy
+        Manager Limited, Application Security Module, Carrier Grade NAT, DNS/GTM,
+      Global Traffic Manager, iRules Language Extensions, Local Traffic Manager, IPv6
+        DNS Support, IPv6 Gateway Module, Interface Mirroring, BGP Routing Module,
+      IS-IS Routing Module, OSPF Routing Module, PIM Routing Module, RIP Routing Module,
+      Spanning Tree Protocol, 'DNS Zones: Unlimited', PVA Enable, 'SSL Mbps: 2000',
+      CMP SSL, CMP SSL per core, 'SSL Total TPS: Unlimited', 'Virtual Edition number
+        of vCPU cores: 8', 'Virtual Edition maximum throughput: 10', 'Virtual Edition
+        maximum pkt/second: 1', 'HTTP Compression: Unlimited', 'BigIP Maximum throughput:
+        1', Remote Crypto Client, Pkcs11 Network HSM, SSL client certificate authorization
+        via LDAP, DDoS Connection Limits, Dynamic Connection Reaping, Packet Filter,
+      SYN Check, SSL Support, SSL Online Certificate Status Protocol, SSL certificate
+        validation via CRLDP, Video QoE, WOM CIFS Optimization, WOM Symmetric Deduplication,
+      WOM MAPI Optimization, WOC SRDF]
+    product_version: 12.1.3.4
+  pva_version: null
+  system_id: 8A4B9366-1974-26CC-984E-0E23CAA97931
+  system_information: {annunciator_board_part_revision: null, annunciator_board_serial: null,
+    chassis_serial: 564d227c-2116-dfe5-9436f7b9182c, host_board_part_revision: null,
+    host_board_serial: null, host_name: adc01.lab.local, os_machine: x86_64, os_release: 2.6.32-431.56.1.el6.f5.x86_64,
+    os_version: '#1 SMP Tue Apr 10 13:42:08 PDT 2018', platform: Z100, product_category: Virtual
+      Edition, switch_board_part_revision: null, switch_board_serial: null, system_name: Linux}
+  time: {day: 3, hour: 21, minute: 23, month: 1, second: 49, year: 2019}
+  time_zone: {gmt_offset: -5, is_daylight_saving_time: 0, time_zone: EST}
+  uptime: 20830
+traffic_group:
+  /Common/traffic-group-1:
+    auto_failback_enabled_state: STATE_DISABLED
+    auto_failback_time: 60
+    default_device: ''
+    description: ''
+    ha_load_factor: 1
+    ha_order: []
+    is_floating: 1
+    mac_masquerade_address: 00:00:00:00:00:00
+    unit_id: 1
+  /Common/traffic-group-local-only:
+    auto_failback_enabled_state: STATE_DISABLED
+    auto_failback_time: 60
+    default_device: ''
+    description: ''
+    ha_load_factor: 1
+    ha_order: []
+    is_floating: 0
+    mac_masquerade_address: 00:00:00:00:00:00
+    unit_id: 0
+trunk: {}
+virtual_address:
+  /Common/10.197.149.32:
+    address: 10.197.149.32
+    arp_state: STATE_ENABLED
+    auto_delete_state: STATE_ENABLED
+    connection_limit: 0
+    description: ''
+    enabled_state: STATE_ENABLED
+    icmp_echo_state: STATE_ENABLED
+    is_floating_state: STATE_ENABLED
+    netmask: 255.255.255.255
+    object_status: {availability_status: AVAILABILITY_STATUS_RED, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: The children virtual server(s) are down}
+    route_advertisement_state: STATE_DISABLED
+    traffic_group: /Common/traffic-group-1
+  /Common/172.16.1.254:
+    address: 172.16.1.254
+    arp_state: STATE_ENABLED
+    auto_delete_state: STATE_ENABLED
+    connection_limit: 0
+    description: ''
+    enabled_state: STATE_ENABLED
+    icmp_echo_state: STATE_ENABLED
+    is_floating_state: STATE_DISABLED
+    netmask: 255.255.255.255
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: null}
+    route_advertisement_state: STATE_DISABLED
+    traffic_group: /Common/traffic-group-local-only
+  /Common/192.168.201.203:
+    address: 192.168.201.203
+    arp_state: STATE_ENABLED
+    auto_delete_state: STATE_ENABLED
+    connection_limit: 0
+    description: ''
+    enabled_state: STATE_ENABLED
+    icmp_echo_state: STATE_ENABLED
+    is_floating_state: STATE_ENABLED
+    netmask: 255.255.255.255
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children virtual server(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    route_advertisement_state: STATE_DISABLED
+    traffic_group: /Common/traffic-group-1
+  /Common/192.168.201.204:
+    address: 192.168.201.204
+    arp_state: STATE_ENABLED
+    auto_delete_state: STATE_ENABLED
+    connection_limit: 0
+    description: ''
+    enabled_state: STATE_ENABLED
+    icmp_echo_state: STATE_ENABLED
+    is_floating_state: STATE_ENABLED
+    netmask: 255.255.255.255
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: null}
+    route_advertisement_state: STATE_DISABLED
+    traffic_group: /Common/traffic-group-1
+  /Common/192.168.201.214:
+    address: 192.168.201.214
+    arp_state: STATE_ENABLED
+    auto_delete_state: STATE_ENABLED
+    connection_limit: 0
+    description: ''
+    enabled_state: STATE_ENABLED
+    icmp_echo_state: STATE_ENABLED
+    is_floating_state: STATE_ENABLED
+    netmask: 255.255.255.255
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: null}
+    route_advertisement_state: STATE_DISABLED
+    traffic_group: /Common/traffic-group-1
+virtual_server:
+  /Common/lab.local.listner:
+    actual_hardware_acceleration: HW_ACCELERATION_MODE_NONE
+    authentication_profile: []
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    bw_controller_policy: ''
+    clone_pool: []
+    cmp_enable_mode: RESOURCE_TYPE_CMP_ENABLE_ALL
+    connection_limit: {high: 0, low: 0}
+    connection_mirror_state: STATE_DISABLED
+    default_pool_name: ''
+    description: ''
+    destination: {address: /Common/172.16.1.254, port: 53}
+    enabled_state: STATE_ENABLED
+    enforced_firewall_policy: ''
+    fallback_persistence_profile: ''
+    gtm_score: {high: 0, low: 0}
+    last_hop_pool: ''
+    name: lab.local.listner
+    nat64_state: STATE_DISABLED
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    persistence_profile: []
+    profile:
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/dns, profile_type: PROFILE_TYPE_DNS}
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/udp_gtm_dns,
+      profile_type: PROFILE_TYPE_UDP}
+    protocol: PROTOCOL_UDP
+    rate_class: ''
+    rate_limit: 0
+    rate_limit_destination_mask: 0
+    rate_limit_mode: RATE_LIMIT_MODE_OBJECT
+    rate_limit_source_mask: 0
+    related_rule: []
+    rule: []
+    security_log_profile: []
+    snat_pool: ''
+    snat_type: SNAT_TYPE_NONE
+    source_address: 0.0.0.0/0
+    source_address_translation_lsn_pool: ''
+    source_address_translation_snat_pool: ''
+    source_address_translation_type: SRC_TRANS_NONE
+    source_port_behavior: SOURCE_PORT_PRESERVE
+    staged_firewall_policy: ''
+    translate_address_state: STATE_DISABLED
+    translate_port_state: STATE_DISABLED
+    type: RESOURCE_TYPE_POOL
+    vlan:
+      state: STATE_ENABLED
+      vlans: [/Common/north]
+    wildmask: 255.255.255.255
+  /Common/redirect_vs1:
+    actual_hardware_acceleration: HW_ACCELERATION_MODE_NONE
+    authentication_profile: []
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    bw_controller_policy: ''
+    clone_pool: []
+    cmp_enable_mode: RESOURCE_TYPE_CMP_ENABLE_ALL
+    connection_limit: {high: 0, low: 0}
+    connection_mirror_state: STATE_DISABLED
+    default_pool_name: ''
+    description: Redirect-VIP1
+    destination: {address: /Common/192.168.201.203, port: 80}
+    enabled_state: STATE_ENABLED
+    enforced_firewall_policy: ''
+    fallback_persistence_profile: ''
+    gtm_score: {high: 0, low: 0}
+    last_hop_pool: ''
+    name: redirect_vs1
+    nat64_state: STATE_DISABLED
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    persistence_profile: []
+    profile:
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/http, profile_type: PROFILE_TYPE_HTTP}
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/tcp, profile_type: PROFILE_TYPE_TCP}
+    protocol: PROTOCOL_TCP
+    rate_class: ''
+    rate_limit: 0
+    rate_limit_destination_mask: 0
+    rate_limit_mode: RATE_LIMIT_MODE_OBJECT
+    rate_limit_source_mask: 0
+    related_rule: []
+    rule:
+    - {priority: 0, rule_name: /Common/http-redirect-https.tcl}
+    security_log_profile: []
+    snat_pool: ''
+    snat_type: SNAT_TYPE_NONE
+    source_address: 0.0.0.0/0
+    source_address_translation_lsn_pool: ''
+    source_address_translation_snat_pool: ''
+    source_address_translation_type: SRC_TRANS_NONE
+    source_port_behavior: SOURCE_PORT_PRESERVE
+    staged_firewall_policy: ''
+    translate_address_state: STATE_ENABLED
+    translate_port_state: STATE_ENABLED
+    type: RESOURCE_TYPE_POOL
+    vlan:
+      state: STATE_ENABLED
+      vlans: [/Common/north]
+    wildmask: 255.255.255.255
+  /Common/vs-tcp-443-wrapwebuat-temp.tssa.bmo.com-10.197.1449.32:
+    actual_hardware_acceleration: HW_ACCELERATION_MODE_NONE
+    authentication_profile: []
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    bw_controller_policy: ''
+    clone_pool: []
+    cmp_enable_mode: RESOURCE_TYPE_CMP_ENABLE_ALL
+    connection_limit: {high: 0, low: 0}
+    connection_mirror_state: STATE_DISABLED
+    default_pool_name: /Common/custome-pool
+    description: custom virtual server
+    destination: {address: /Common/10.197.149.32, port: 443}
+    enabled_state: STATE_ENABLED
+    enforced_firewall_policy: ''
+    fallback_persistence_profile: ''
+    gtm_score: {high: 0, low: 0}
+    last_hop_pool: ''
+    name: vs-tcp-443-wrapwebuat-temp.tssa.bmo.com-10.197.1449.32
+    nat64_state: STATE_DISABLED
+    object_status: {availability_status: AVAILABILITY_STATUS_RED, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: The children pool member(s) are down}
+    persistence_profile: []
+    profile:
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/http, profile_type: PROFILE_TYPE_HTTP}
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/tcp, profile_type: PROFILE_TYPE_TCP}
+    protocol: PROTOCOL_TCP
+    rate_class: ''
+    rate_limit: 0
+    rate_limit_destination_mask: 0
+    rate_limit_mode: RATE_LIMIT_MODE_OBJECT
+    rate_limit_source_mask: 0
+    related_rule: []
+    rule:
+    - {priority: 0, rule_name: /Common/SNAT-10-197-225}
+    security_log_profile: []
+    snat_pool: ''
+    snat_type: SNAT_TYPE_NONE
+    source_address: 0.0.0.0/0
+    source_address_translation_lsn_pool: ''
+    source_address_translation_snat_pool: ''
+    source_address_translation_type: SRC_TRANS_NONE
+    source_port_behavior: SOURCE_PORT_PRESERVE
+    staged_firewall_policy: ''
+    translate_address_state: STATE_ENABLED
+    translate_port_state: STATE_ENABLED
+    type: RESOURCE_TYPE_POOL
+    vlan:
+      state: STATE_DISABLED
+      vlans: []
+    wildmask: 255.255.255.255
+  /Common/vs1:
+    actual_hardware_acceleration: HW_ACCELERATION_MODE_NONE
+    authentication_profile: []
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    bw_controller_policy: ''
+    clone_pool: []
+    cmp_enable_mode: RESOURCE_TYPE_CMP_ENABLE_ALL
+    connection_limit: {high: 0, low: 0}
+    connection_mirror_state: STATE_DISABLED
+    default_pool_name: /Common/test_pool
+    description: VIP1
+    destination: {address: /Common/192.168.201.203, port: 443}
+    enabled_state: STATE_ENABLED
+    enforced_firewall_policy: ''
+    fallback_persistence_profile: ''
+    gtm_score: {high: 0, low: 0}
+    last_hop_pool: ''
+    name: vs1
+    nat64_state: STATE_DISABLED
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    persistence_profile: []
+    profile:
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/http, profile_type: PROFILE_TYPE_HTTP}
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/tcp, profile_type: PROFILE_TYPE_TCP}
+    protocol: PROTOCOL_TCP
+    rate_class: ''
+    rate_limit: 0
+    rate_limit_destination_mask: 0
+    rate_limit_mode: RATE_LIMIT_MODE_OBJECT
+    rate_limit_source_mask: 0
+    related_rule: []
+    rule: []
+    security_log_profile: []
+    snat_pool: ''
+    snat_type: SNAT_TYPE_NONE
+    source_address: 0.0.0.0/0
+    source_address_translation_lsn_pool: ''
+    source_address_translation_snat_pool: ''
+    source_address_translation_type: SRC_TRANS_NONE
+    source_port_behavior: SOURCE_PORT_PRESERVE
+    staged_firewall_policy: ''
+    translate_address_state: STATE_ENABLED
+    translate_port_state: STATE_ENABLED
+    type: RESOURCE_TYPE_POOL
+    vlan:
+      state: STATE_ENABLED
+      vlans: [/Common/north]
+    wildmask: 255.255.255.255
+  /Common/vs2:
+    actual_hardware_acceleration: HW_ACCELERATION_MODE_NONE
+    authentication_profile: []
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    bw_controller_policy: ''
+    clone_pool: []
+    cmp_enable_mode: RESOURCE_TYPE_CMP_ENABLE_ALL
+    connection_limit: {high: 0, low: 0}
+    connection_mirror_state: STATE_DISABLED
+    default_pool_name: /Common/test_pool-2
+    description: VIP2
+    destination: {address: /Common/192.168.201.204, port: 443}
+    enabled_state: STATE_ENABLED
+    enforced_firewall_policy: ''
+    fallback_persistence_profile: ''
+    gtm_score: {high: 0, low: 0}
+    last_hop_pool: ''
+    name: vs2
+    nat64_state: STATE_DISABLED
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    persistence_profile: []
+    profile:
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/http, profile_type: PROFILE_TYPE_HTTP}
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/tcp, profile_type: PROFILE_TYPE_TCP}
+    protocol: PROTOCOL_TCP
+    rate_class: ''
+    rate_limit: 0
+    rate_limit_destination_mask: 0
+    rate_limit_mode: RATE_LIMIT_MODE_OBJECT
+    rate_limit_source_mask: 0
+    related_rule: []
+    rule: []
+    security_log_profile: []
+    snat_pool: ''
+    snat_type: SNAT_TYPE_NONE
+    source_address: 0.0.0.0/0
+    source_address_translation_lsn_pool: ''
+    source_address_translation_snat_pool: ''
+    source_address_translation_type: SRC_TRANS_NONE
+    source_port_behavior: SOURCE_PORT_PRESERVE
+    staged_firewall_policy: ''
+    translate_address_state: STATE_ENABLED
+    translate_port_state: STATE_ENABLED
+    type: RESOURCE_TYPE_POOL
+    vlan:
+      state: STATE_ENABLED
+      vlans: [/Common/one-arm]
+    wildmask: 255.255.255.255
+  /Common/vs3:
+    actual_hardware_acceleration: HW_ACCELERATION_MODE_NONE
+    authentication_profile: []
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    bw_controller_policy: ''
+    clone_pool: []
+    cmp_enable_mode: RESOURCE_TYPE_CMP_ENABLE_ALL
+    connection_limit: {high: 0, low: 0}
+    connection_mirror_state: STATE_DISABLED
+    default_pool_name: /Common/test_pool-3
+    description: VIP3
+    destination: {address: /Common/192.168.201.214, port: 443}
+    enabled_state: STATE_ENABLED
+    enforced_firewall_policy: ''
+    fallback_persistence_profile: ''
+    gtm_score: {high: 0, low: 0}
+    last_hop_pool: ''
+    name: vs3
+    nat64_state: STATE_DISABLED
+    object_status: {availability_status: AVAILABILITY_STATUS_BLUE, enabled_status: ENABLED_STATUS_ENABLED,
+      status_description: 'The children pool member(s) either don''t have service
+        checking enabled, or service check results are not available yet'}
+    persistence_profile: []
+    profile:
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/http, profile_type: PROFILE_TYPE_HTTP}
+    - {profile_context: PROFILE_CONTEXT_TYPE_ALL, profile_name: /Common/tcp, profile_type: PROFILE_TYPE_TCP}
+    protocol: PROTOCOL_TCP
+    rate_class: ''
+    rate_limit: 0
+    rate_limit_destination_mask: 0
+    rate_limit_mode: RATE_LIMIT_MODE_OBJECT
+    rate_limit_source_mask: 0
+    related_rule: []
+    rule: []
+    security_log_profile: []
+    snat_pool: ''
+    snat_type: SNAT_TYPE_NONE
+    source_address: 0.0.0.0/0
+    source_address_translation_lsn_pool: ''
+    source_address_translation_snat_pool: ''
+    source_address_translation_type: SRC_TRANS_NONE
+    source_port_behavior: SOURCE_PORT_PRESERVE
+    staged_firewall_policy: ''
+    translate_address_state: STATE_ENABLED
+    translate_port_state: STATE_ENABLED
+    type: RESOURCE_TYPE_POOL
+    vlan:
+      state: STATE_ENABLED
+      vlans: [/Common/one-arm]
+    wildmask: 255.255.255.255
+vlan:
+  /Common/north:
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    cmp_hash_algorithm: CMP_HASH_DEFAULT
+    description: ''
+    dynamic_forwarding: []
+    failsafe_action: HA_ACTION_FAILOVER_ABORT_TRAFFIC_MGT
+    failsafe_state: STATE_DISABLED
+    failsafe_timeout: 90
+    if_index: 224
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    mac_masquerade_address: 00:00:00:00:00:00
+    member:
+    - {member_name: '1.2', member_type: MEMBER_INTERFACE, tag_state: MEMBER_UNTAGGED}
+    mtu: 1500
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sflow_sampling_rate: 0
+    sflow_sampling_rate_global: SFLOW_GLOBAL_YES
+    source_check_state: STATE_DISABLED
+    true_mac_address: 00:0C:29:B9:18:40
+    vlan_id: 4093
+  /Common/one-arm:
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    cmp_hash_algorithm: CMP_HASH_DEFAULT
+    description: ''
+    dynamic_forwarding: []
+    failsafe_action: HA_ACTION_FAILOVER_ABORT_TRAFFIC_MGT
+    failsafe_state: STATE_DISABLED
+    failsafe_timeout: 90
+    if_index: 192
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    mac_masquerade_address: 00:00:00:00:00:00
+    member:
+    - {member_name: '1.1', member_type: MEMBER_INTERFACE, tag_state: MEMBER_UNTAGGED}
+    mtu: 1500
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sflow_sampling_rate: 0
+    sflow_sampling_rate_global: SFLOW_GLOBAL_YES
+    source_check_state: STATE_DISABLED
+    true_mac_address: 00:0C:29:B9:18:36
+    vlan_id: 4094
+  /Common/south:
+    auto_lasthop: AUTO_LASTHOP_DEFAULT
+    cmp_hash_algorithm: CMP_HASH_DEFAULT
+    description: ''
+    dynamic_forwarding: []
+    failsafe_action: HA_ACTION_FAILOVER_ABORT_TRAFFIC_MGT
+    failsafe_state: STATE_DISABLED
+    failsafe_timeout: 90
+    if_index: 240
+    learning_mode: LEARNING_MODE_ENABLE_FORWARD
+    mac_masquerade_address: 00:00:00:00:00:00
+    member:
+    - {member_name: '1.3', member_type: MEMBER_INTERFACE, tag_state: MEMBER_UNTAGGED}
+    mtu: 1500
+    sflow_poll_interval: 0
+    sflow_poll_interval_global: SFLOW_GLOBAL_YES
+    sflow_sampling_rate: 0
+    sflow_sampling_rate_global: SFLOW_GLOBAL_YES
+    source_check_state: STATE_DISABLED
+    true_mac_address: 00:0C:29:B9:18:4A
+    vlan_id: 4092

@@ -1,0 +1,113 @@
+vips:
+  vs1:
+    name: vs1
+    description: VIP1
+    destination: 192.168.201.203
+    port: 443
+    snat: "automap"
+    pool:
+      name: "test_pool"
+      state: present
+      nodes:
+        - host: 10.10.10.10
+          name: node-1
+          port: "80"
+          node_state: present
+          member_state: present
+        - host: 10.10.10.20
+          name: node-2
+          port: "80"
+          node_state: present
+          member_state: present
+    irules: #this is a list
+      - http-redirect-https.tcl
+    vlan: north
+    profiles:
+      - http
+      - tcp
+      # - name: serverssl
+      #   context: server-side
+      # - name: customer_ssl_profile
+      #   context: client-side
+    # policies: # this is a list
+    state: present
+  vs2:
+    name: vs2
+    description: VIP2
+    destination: 192.168.201.204
+    port: 443
+    snat: "automap"
+    pool:
+      name: "test_pool-2"
+      state: present
+      nodes:
+        - host: 10.10.10.11
+          name: node-11
+          port: "80"
+          node_state: present
+          member_state: present
+        - host: 10.10.10.21
+          name: node-21
+          port: "80"
+          node_state: present
+          member_state: present
+    irules: #this is a list
+      - http-redirect-https.tcl
+    vlan: one-arm
+    profiles:
+      - http
+      - tcp
+      # - name: serverssl
+      #   context: server-side
+      # - name: customer_ssl_profile
+      #   context: client-side
+    # policies: # this is a list
+    state: present
+  vs3:
+    name: vs3
+    description: VIP3
+    destination: 192.168.201.214
+    port: 443
+    snat: "automap"
+    pool:
+      name: "test_pool-3"
+      state: present
+      nodes:
+        - host: 10.10.10.31
+          name: node-31
+          port: "80"
+          node_state: present
+          member_state: present
+        - host: 10.10.10.41
+          name: node-41
+          port: "80"
+          node_state: present
+          member_state: present
+    irules: #this is a list
+      - http-redirect-https.tcl
+    vlan: one-arm
+    profiles:
+      - http
+      - tcp
+      # - name: serverssl
+      #   context: server-side
+      # - name: customer_ssl_profile
+      #   context: client-side
+    # policies: # this is a list
+    state: present
+redirect_vips:
+  redirect_vs1:
+    name: redirect_vs1
+    description: Redirect-VIP1
+    destination: 192.168.201.203
+    port: 80
+    snat: "automap"
+    irules: #this is a list
+      - http-redirect-https.tcl
+    vlan:
+      - north
+    profiles:
+      - http
+      - tcp
+    state: present
+    pool: ""

@@ -1,0 +1,36 @@
+adc01.lab.local:
+  - pool: custome-pool
+    members:
+      - address: 100.127.215.237
+        name: 100.127.215.237:4443
+        state: offline
+      - address: 172.16.100.100
+        name: 172.16.100.100:443
+        state: offline
+  - pool: test_pool
+    members:
+      - address: 10.10.10.10
+        name: node-1:80
+        state: present
+      - address: 10.10.10.20
+        name: node-2:80
+        state: present
+  - pool: test_pool-2
+    members:
+      - address: 10.10.10.11
+        name: node-11:80
+        state: present
+      - address: 10.10.10.21
+        name: node-21:80
+        state: present
+      - address: 10.10.10.21
+        name: node-21:88
+        state: present
+  - pool: test_pool-3
+    members:
+      - address: 10.10.10.31
+        name: node-31:80
+        state: present
+      - address: 10.10.10.41
+        name: node-41:80
+        state: present

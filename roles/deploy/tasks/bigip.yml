@@ -1,0 +1,175 @@
+---
+
+  - name: Create backup file
+    bigip_command:
+      commands: "save /sys ucs {{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}.ucs"
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      validate_certs: false
+    delegate_to: localhost
+    when: backup is defined
+
+  - name: Confirm ucs file exists
+    bigip_command:
+      commands: run /util bash -c "ls -l /var/local/ucs/*.ucs"
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      validate_certs: false
+    register: result
+    delegate_to: localhost
+    when: backup is defined
+  
+  - debug: var=result['stdout'][0]
+    when: debug is defined
+
+  - name: Confirm ucs file exists
+    assert:
+      that:
+        - "lookup('pipe', 'date +%Y-%m-%d-%H') in result['stdout'][0]"
+      fail_msg: "UCS file creation failed"
+      # success_msg: "UCS file was created successfully"
+    when: backup is defined
+
+  - name: Delete ucs file exists
+    bigip_command:
+      commands: run /util bash -c "rm -f /var/local/ucs/*.ucs"
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      validate_certs: false
+    register: result
+    delegate_to: localhost
+    when: delete_ucs is defined
+
+  - name: Generate http-redirect-https iRule
+    template:
+      src: http-redirect-https.j2
+      dest: "{{ role_path }}/files/http-redirect-https.tcl"
+
+  - name: Upload irules
+    bigip_irule:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      src: "{{ item }}"
+      module: ltm
+      name: "{{ item | basename }}"
+      validate_certs: false
+    with_fileglob: 
+      - "{{ role_path }}/files/*.tcl"
+    delegate_to: localhost
+    loop_control:
+      label: "{{ item | basename }}"
+
+  - name: Creating nodes
+    bigip_node:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      host: "{{item.1.host}}"
+      name: "{{item.1.name}}"
+      validate_certs: false
+      state: "{{ item.1.node_state }}"
+    with_subelements:
+      - "{{ vips }}"
+      - pool.nodes
+    delegate_to: localhost
+    loop_control:
+      label: "{{ item.1.name }} {{ item.1.host }} {{ item.1.node_state }}"
+
+  - name: Create pool
+    bigip_pool:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.value.pool.name }}"
+      validate_certs: false
+      state: "{{ item.value.pool.state }}"
+    with_dict:
+      - "{{ vips }}"
+    delegate_to: localhost
+    loop_control:
+      label: "{{ item.value.pool.name}}"
+
+  - name: Add Pool members
+    bigip_pool_member:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.1.name }}"
+      host: "{{ item.1.host }}"
+      port: "{{ item.1.port }}"
+      pool: "{{ item.0.pool.name }}"
+      state: "{{ item.1.member_state }}"
+      validate_certs: false
+    with_subelements:
+      - "{{ vips }}"
+      - pool.nodes
+    delegate_to: localhost
+    loop_control:
+      label: "{{ item.0.pool.name }} -> {{ item.1.name }} -> {{ item.1.host }} -> {{ item.1.port }} -> {{ item.1.member_state }}"
+
+  - name: Add Virtual Servers
+    bigip_virtual_server:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.value.name | default('item.key') }}"
+      description: "{{ item.value.description }}"
+      destination: "{{ item.value.destination }}"
+      port: "{{ item.value.port }}"
+      pool: "{{ item.value.pool.name }}"
+      snat: "{{ item.value.sna | default('none') }}"
+      profiles: "{{ item.value.profiles | default('') }}"
+      irules: "{{ item.value.irules.name | default('') }}"
+      enabled_vlans: "{{ item.value.vlan | default('') }}"
+      state: "{{ item.value.state }}"
+      validate_certs: false
+    with_dict:
+      - "{{ vips }}"
+    delegate_to: localhost
+    loop_control:
+      label: "{{ item.key }} -> {{ item.value.destination }} -> {{ item.value.port }} -> {{ item.value.vlan }} -> {{ item.value.state }}"
+
+  - name: Add Redirect Virtual Servers
+    bigip_virtual_server:
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      name: "{{ item.value.name | default('item.key') }}"
+      description: "{{ item.value.description }}"
+      destination: "{{ item.value.destination }}"
+      port: "{{ item.value.port }}"
+      pool: "{{ item.value.pool.name | default('') }}"
+      snat: "{{ item.value.sna | default('none') }}"
+      profiles: "{{ item.value.profiles | default('') }}"
+      irules: "{{ item.value.irules | default('') }}"
+      enabled_vlans: "{{ item.value.vlan | default('') }}"
+      state: "{{ item.value.state }}"
+      validate_certs: false
+    with_dict:
+      - "{{ redirect_vips }}"
+    delegate_to: localhost
+    loop_control:
+      label: "{{ item.key }} -> {{ item.value.destination }} -> {{ item.value.port }} -> {{ item.value.vlan }} -> {{ item.value.state }}"
+
+  - name: Save the running configuration of the BIG-IP
+    bigip_config:
+      save: yes
+      server: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      validate_certs: false
+    delegate_to: localhost
+
+# Merge SCF formatted files into the running configuration
+  # - name: Load an SCF configuration
+  #   bigip_config:
+  #     server: "{{ inventory_hostname }}"
+  #     user: "{{ ansible_user }}"
+  #     password: "{{ ansible_ssh_pass }}"
+  #     merge_content: "{{ lookup('file', '/path/to/config.scf') }}"
+  #     validate_certs: false
+  #   delegate_to: localhost

@@ -1,0 +1,10 @@
+changed: true
+deprecations:
+- {msg: Param 'server' is deprecated. See the module docs for more information, version: 2.9}
+- {msg: Param 'user' is deprecated. See the module docs for more information, version: 2.9}
+- {msg: Param 'password' is deprecated. See the module docs for more information,
+  version: 2.9}
+failed: false
+pool: []
+server: []
+wide_ip: []

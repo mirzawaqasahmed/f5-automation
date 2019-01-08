@@ -1,0 +1,10 @@
+{{ inventory_hostname }}:
+{% for p in pool_list %}
+  - pool: {{ p['pool'] }}
+    members:
+{% for m in p['members'] %}
+      - address: {{ m['address'] }}
+        name: {{ m['name'] }}
+        state: {{ m['state'] }}
+{% endfor %}
+{% endfor %}
